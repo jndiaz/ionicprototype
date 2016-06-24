@@ -7,7 +7,11 @@ angular.module('starter.factories')
           subtitle: 'Subtitle new 1',
           date: new Date(),
           subject: 'Algebra',
-          author: 'Mr. Algebra Teacher',
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: 'img/placeholder/walter.white.jpg',
+          },
           body: '<p>In tollit electram mea, cum cetero sadipscing ad. Amet facer facilisis nam at, eius quando per      no? Nec et agam mollis? Elitr ocurreret mel at, cu soluta putent reformidans quo! No vis magna solet? Per porro audiam copiosae ei, tota habeo et nam, cu intellegat contentiones consequuntur his!</p><p>Ex pri nonumy alterum suscipit, vero consul facilisis at usu? Ex vel atomorum volutpat periculis, utinam postulant eum in. An postea atomorum salutandi mel, cu case quas utinam vix. Cu movet veniam has.</p>',
           image: {
             path: 'img/placeholder/new.jpg'
@@ -18,7 +22,11 @@ angular.module('starter.factories')
           subtitle: 'Subtitle for another new',
           date: new Date(),
           subject: 'Chemistry',
-          author: 'Walter White',
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: 'img/placeholder/walter.white.jpg',
+          },
           body: '<p>In tollit electram mea, cum cetero sadipscing ad. Amet facer facilisis nam at, eius quando per      no? Nec et agam mollis? Elitr ocurreret mel at, cu soluta putent reformidans quo! No vis magna solet? Per porro audiam copiosae ei, tota habeo et nam, cu intellegat contentiones consequuntur his!</p>',
           image: {
             path: 'img/placeholder/new.jpg'
@@ -29,7 +37,11 @@ angular.module('starter.factories')
           subtitle: 'Awesome subtitle',
           date: new Date(),
           subject: 'Awesome subject',
-          author: 'Mr. Awesome',
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: 'img/placeholder/walter.white.jpg',
+          },
           body: '<p>In tollit electram mea, cum cetero sadipscing ad. Amet facer facilisis nam at, eius quando per      no? Nec et agam mollis? Elitr ocurreret mel at, cu soluta putent reformidans quo! No vis magna solet? Per porro audiam copiosae ei, tota habeo et nam, cu intellegat contentiones consequuntur his!</p><p>Ex pri nonumy alterum suscipit, vero consul facilisis at usu? Ex vel atomorum volutpat periculis, utinam postulant eum in. An postea atomorum salutandi mel, cu case quas utinam vix. Cu movet veniam has.</p>',
           image: {
             path: 'img/placeholder/new.jpg'
@@ -43,7 +55,11 @@ angular.module('starter.factories')
           subtitle: 'Subtitle for extra new',
           date: new Date(),
           subject: 'Biology',
-          author: 'Dr Victor Frankenstein',
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: 'img/placeholder/walter.white.jpg',
+          },
           body: '<p>In tollit electram mea, cum cetero sadipscing ad. Amet facer facilisis nam at, eius quando per      no? Nec et agam mollis? Elitr ocurreret mel at, cu soluta putent reformidans quo! No vis magna solet? Per porro audiam copiosae ei, tota habeo et nam, cu intellegat contentiones consequuntur his!</p>',
           image: {
             path: 'img/placeholder/new.jpg'

@@ -1,7 +1,7 @@
 <ion-view view-title="sidemenu">
   <section class="user-info">
     <div class="user-image">
-      <img src="{{vm.loggedUser.profileImage.path}}" alt="" class="img-responsive" />
+      <img ng-src="{{vm.loggedUser.profileImage.path}}" alt="" class="img-responsive" />
     </div>
     <h2 class="username">{{vm.loggedUser.getFullName()}}</h2>
   </section>

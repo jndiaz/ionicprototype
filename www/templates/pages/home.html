@@ -8,12 +8,12 @@
       <div ng-repeat="new in vm.news">
         <div class="list card">
           <div class="item item-avatar">
-            <img src="">
+            <img ng-src="{{new.author.profileImage.path}}">
             <h2>{{new.title}}</h2>
             <p>{{new.dateInEnglish().month}} {{new.date.getDay()}},  {{new.date.getFullYear()}}</p>
           </div>
           <div class="item item-body">
-            <img class="full-image" src="{{new.image.path}}">
+            <img class="full-image" ng-src="{{new.image.path}}">
             <div ng-bind-html="new.body"></div>
             <p>
               <a href="#" class="subdued">1 Like</a>

@@ -23,11 +23,15 @@ angular.module('starter.factories')
 
       User.create = function(){
         return new User();
-      }
+      };
 
       User.build = function(username, password, profileImage, name, lastname){
         return new User(username, password, Image.build(profileImage), name, lastname);
-      }
+      };
+
+      User.buildSimplefied = function(name, lastname, profileImage){
+        return new User(null, null, Image.build(profileImage), name, lastname);
+      };
 
       return User;
 

@@ -1,5 +1,5 @@
 angular.module('starter.factories')
-  .factory('New', ['dateHelper', 'Image', function(dateHelper, Image){
+  .factory('New', ['dateHelper', 'Image', 'User', function(dateHelper, Image, User){
 
       function New(title, subtitle, date, subject, author, body, image){
         this.title = title;
@@ -26,7 +26,10 @@ angular.module('starter.factories')
       }
 
       New.build = function(title, subtitle, date, subject, author, body, image){
-        return new New(title, subtitle, date, subject, author, body, Image.build(image.path));
+        return new New(title,
+          subtitle, date, subject,
+          User.buildSimplefied(author.name, author.lastname, author.profileImage),
+          body, Image.build(image.path));
       }
 
       return New;

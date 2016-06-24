@@ -1,5 +1,5 @@
 angular.module('starter.services')
-  .service('newService', ['newAPIService', '$q', 'New', function(newAPIService, $q, New){
+  .service('newService', ['newAPIService', '$q', 'New', function(newAPIService, $q, New, User){
 
     this.getNews = function(){
       return $q(function(resolve, reject){
