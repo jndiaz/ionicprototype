@@ -5,7 +5,7 @@ angular.module('starter.factories')
         {
           title: 'New 1',
           subtitle: 'Subtitle new 1',
-          date: new Date(),
+          date: randomDate(new Date(2016, 3, 1), new Date()),
           subject: 'Algebra',
           author: {
             name: 'Walter',
@@ -20,7 +20,7 @@ angular.module('starter.factories')
         {
           title: 'Another new',
           subtitle: 'Subtitle for another new',
-          date: new Date(),
+          date: randomDate(new Date(2016, 3, 1), new Date()),
           subject: 'Chemistry',
           author: {
             name: 'Walter',
@@ -35,7 +35,7 @@ angular.module('starter.factories')
         {
           title: 'Awesome new',
           subtitle: 'Awesome subtitle',
-          date: new Date(),
+          date: randomDate(new Date(2016, 3, 1), new Date()),
           subject: 'Awesome subject',
           author: {
             name: 'Walter',
@@ -71,17 +71,25 @@ angular.module('starter.factories')
         {
           title: 'Awesome file',
           description: 'Awesome subtitle',
-          date: new Date(),
+          date: randomDate(new Date(2016, 3, 1), new Date()),
           subject: 'Awesome subject',
-          author: 'Mr. Awesome',
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: 'img/placeholder/walter.white.jpg',
+          },
           path: 'fakedata/file1.txt'
         },
         {
           title: 'Im the one',
           description: 'Who knocks.',
-          date: new Date(),
+          date: randomDate(new Date(2016, 3, 1), new Date()),
           subject: 'Chemistry',
-          author: 'Walter White',
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: 'img/placeholder/walter.white.jpg',
+          },
           path: 'fakedata/file2.txt'
         }
       ];
@@ -90,9 +98,13 @@ angular.module('starter.factories')
         {
           title: 'Im a new file',
           description: 'Just created',
-          date: new Date(),
+          date: randomDate(new Date(2016, 3, 1), new Date()),
           subject: 'Biology',
-          author: 'Dr. Victor Frankenstein',
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: 'img/placeholder/walter.white.jpg',
+          },
           path: 'fakedata/file3.txt'
         }
       ]
@@ -131,13 +143,23 @@ angular.module('starter.factories')
         return found;
       }
 
+      function randomDate(start, end){
+        return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+      }
+
+      function orderByDate(list){
+        return list.sort(function(a,b){
+          return b.date - a.date;
+        })
+      }
+
       return {
         getNews: function(){
           return $q(function(resolve, reject){
             setTimeout(function(){
               //Hardcoded
               if (true){
-                resolve(news);
+                resolve(orderByDate(news));
               }else {
                 reject(null);
               }
@@ -161,7 +183,7 @@ angular.module('starter.factories')
             setTimeout(function(){
               //Hardcoded
               if (true){
-                resolve(files);
+                resolve(orderByDate(files));
               }else {
                 reject(null);
               }

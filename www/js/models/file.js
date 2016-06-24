@@ -1,9 +1,9 @@
 angular.module('starter.factories')
-  .factory('File', function(){
+  .factory('File', ['User', function(User){
 
       function File(title, description, date, subject, author, path){
         this.title = title;
-        this.description = subtitle;
+        this.description = description;
         this.date = date;
         this.subject = subject;
         this.author = author;
@@ -18,6 +18,11 @@ angular.module('starter.factories')
         return new File();
       }
 
+      File.build = function(title, description, date, subject, author, path){
+        return new File(title, description, date, subject,
+          User.buildSimplefied(author.name, author.lastname, author.profileImage), path);
+      }
+
       return File;
 
-  });
+  }]);

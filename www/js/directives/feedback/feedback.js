@@ -5,7 +5,8 @@ angular.module('starter.directives')
         restrict: 'EA',
         templateUrl: 'js/directives/feedback/feedback.html',
         scope: {
-          newsList: '='
+          newsList: '=',
+          fileList: '='
         }
       }
     });

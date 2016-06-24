@@ -15,3 +15,19 @@
     </div>
   </div>
 </div>
+<div ng-repeat="file in fileList">
+  <div class="list card">
+    <div class="item item-avatar">
+      <img ng-src="{{file.author.profileImage.path}}">
+      <h2>{{file.title}}</h2>
+      <p>{{file.dateInEnglish().month}} {{file.date.getDay()}},  {{file.date.getFullYear()}}</p>
+    </div>
+    <div class="item item-body">
+      <div ng-bind-html="file.description"></div>
+      <p>
+        <a href="{{file.path}}" download class="subdued">Download</a>
+        <a href="#" class="subdued">5 Comments</a>
+      </p>
+    </div>
+  </div>
+</div>
