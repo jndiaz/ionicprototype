@@ -1,5 +1,5 @@
 angular.module('starter.factories')
-  .factory('File', ['User', function(User){
+  .factory('File', ['User', 'dateHelper', function(User, dateHelper){
 
       function File(title, description, date, subject, author, path){
         this.title = title;
@@ -12,6 +12,12 @@ angular.module('starter.factories')
 
       File.prototype.isValid = function(){
         return true;
+      }
+
+      File.prototype.dateInEnglish = function(){
+        return {
+          month: dateHelper.getLongMonthNameByLanguage(this.date, 'en-us')
+        }
       }
 
       File.create = function(){

@@ -1,31 +1,29 @@
-<div ng-repeat="new in newsList">
-  <div class="list card">
+<div ng-repeat="item in feedbackList">
+  <div ng-if="item.isNew" class="list card">
     <div class="item item-avatar">
-      <img ng-src="{{new.author.profileImage.path}}">
-      <h2>{{new.title}}</h2>
-      <p>{{new.dateInEnglish().month}} {{new.date.getDay()}},  {{new.date.getFullYear()}}</p>
+      <img ng-src="{{item.author.profileImage.path}}">
+      <h2>{{item.title}}</h2>
+      <p>{{item.dateInEnglish().month}} {{item.date.getDay()}},  {{item.date.getFullYear()}}</p>
     </div>
     <div class="item item-body">
-      <img class="full-image" ng-src="{{new.image.path}}">
-      <div ng-bind-html="new.body"></div>
+      <img class="full-image" ng-src="{{item.image.path}}">
+      <div ng-bind-html="item.body"></div>
       <p>
         <a href="#" class="subdued">1 Like</a>
         <a href="#" class="subdued">5 Comments</a>
       </p>
     </div>
   </div>
-</div>
-<div ng-repeat="file in fileList">
-  <div class="list card">
+  <div ng-if="!item.isNew " class="list card">
     <div class="item item-avatar">
-      <img ng-src="{{file.author.profileImage.path}}">
-      <h2>{{file.title}}</h2>
-      <p>{{file.dateInEnglish().month}} {{file.date.getDay()}},  {{file.date.getFullYear()}}</p>
+      <img ng-src="{{item.author.profileImage.path}}">
+      <h2>{{item.title}}</h2>
+      <p>{{item.dateInEnglish().month}} {{item.date.getDay()}},  {{item.date.getFullYear()}}</p>
     </div>
     <div class="item item-body">
-      <div ng-bind-html="file.description"></div>
+      <div ng-bind-html="item.description"></div>
       <p>
-        <a href="{{file.path}}" download class="subdued">Download</a>
+        <a href="{{item.path}}" download class="subdued">Download</a>
         <a href="#" class="subdued">5 Comments</a>
       </p>
     </div>
