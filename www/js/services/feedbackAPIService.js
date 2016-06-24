@@ -6,7 +6,7 @@ angular.module('starter.services')
 
     var items = [
       {
-        title: 'asd';
+        title: 'asd'
       }
     ];
 

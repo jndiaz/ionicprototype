@@ -9863,9 +9863,8 @@ a.button {
     height: 56px;
     line-height: 56px;
     color: white;
-    margin: 0px 16px; }
-    .platform-android .bar .title span {
-      padding-left: 40px; }
+    margin: 0px 16px;
+    padding-left: 56px; }
   .platform-android .bar .button-icon {
     color: white; }
 

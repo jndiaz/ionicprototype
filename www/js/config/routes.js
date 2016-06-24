@@ -14,7 +14,10 @@ angular.module('starter.config')
       views: {
         'content': {
           templateUrl: 'templates/pages/home.html',
-          controller: 'HomeController'
+          controller: 'HomeController',
+          data:{
+            title: 'Home'
+          }
         },
         'navbar': {
           templateUrl: 'templates/components/navbar.html',
@@ -31,7 +34,10 @@ angular.module('starter.config')
       views: {
         'content': {
           templateUrl: 'templates/pages/asignatures.html',
-          controller: 'AsignaturesController'
+          controller: 'AsignaturesController',
+          data:{
+            title: 'Asignatures'
+          }
         },
         'navbar': {
           templateUrl: 'templates/components/navbar.html',
