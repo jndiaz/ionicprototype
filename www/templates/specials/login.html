@@ -1,0 +1,19 @@
+<ion-view view-title="Login">
+  <ion-pane class="login">
+    <div class="opacity-wrapper">
+      <img src="img/backgrounds/login-background.jpg" alt="" />
+      <div class="wrapper"></div>
+    </div>
+    <section class="login-form">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">USERNAME</span>
+        <input type="text" placeholder="USERNAME" ng-model="vm.user.username">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">PASSWORD</span>
+        <input type="password" placeholder="PASSWORD" ng-model="vm.user.password">
+      </label>
+      <span class="button-flat" ng-click="vm.login()">LOGIN</span>
+    </section>
+  </ion-pane>
+</ion-view>

@@ -1,0 +1,12 @@
+<ion-side-menus>
+  <!-- Left menu -->
+  <ion-side-menu side="left" class="menu">
+    <section ui-view="sidemenu"></section>
+  </ion-side-menu>
+
+  <ion-side-menu-content>
+    <section ui-view="navbar"></section>
+    <ion-nav-view name="content" class="content"></ion-nav-view>
+  </ion-side-menu-content>
+
+</ion-side-menus>

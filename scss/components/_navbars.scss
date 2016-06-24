@@ -1,0 +1,20 @@
+.platform-android{
+  .bar{
+    height: $navbar-height;
+    background-color: $color-primary;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+    background-image: none;
+    .title{
+      height: $navbar-height;
+      line-height: $navbar-height;
+      color: white;
+      margin: 0px 16px;
+      span{
+        padding-left: 40px;
+      }
+    }
+    .button-icon{
+      color: white;
+    }
+  }
+}

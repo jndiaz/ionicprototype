@@ -1,0 +1,16 @@
+//Variables
+$button-height: 50px;
+$button-radius: 2px;
+
+.button-flat{
+  display: block;
+  height: $button-height;
+  text-align: center;
+  text-decoration: no;
+  text-decoration: initial;
+  background: $color-primary;
+  line-height: $button-height;
+  color: white;
+  font-weight: bold;
+  border-radius: $button-radius;
+}
