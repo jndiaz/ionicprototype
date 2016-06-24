@@ -7,7 +7,9 @@ angular.module('starter.controllers', []);
 angular.module('starter.config', []);
 angular.module('starter.services', []);
 angular.module('starter.factories', []);
-angular.module('starter', ['ionic', 'starter.config', 'starter.controllers', 'starter.services', 'starter.factories'])
+angular.module('starter.directives', []);
+angular.module('starter', ['ionic', 'starter.config', 'starter.controllers', 'starter.services',
+'starter.factories', 'starter.directives'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {

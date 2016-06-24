@@ -5,23 +5,7 @@
         pulling-text="Pull to refresh..."
         on-refresh="doRefresh()">
       </ion-refresher>
-      <div ng-repeat="new in vm.news">
-        <div class="list card">
-          <div class="item item-avatar">
-            <img ng-src="{{new.author.profileImage.path}}">
-            <h2>{{new.title}}</h2>
-            <p>{{new.dateInEnglish().month}} {{new.date.getDay()}},  {{new.date.getFullYear()}}</p>
-          </div>
-          <div class="item item-body">
-            <img class="full-image" ng-src="{{new.image.path}}">
-            <div ng-bind-html="new.body"></div>
-            <p>
-              <a href="#" class="subdued">1 Like</a>
-              <a href="#" class="subdued">5 Comments</a>
-            </p>
-          </div>
-        </div>
-      </div>
+      <feedback news-list="vm.news"></feedback>
     </ion-content>
   </ion-pane>
 </ion-view>
