@@ -1,4 +1,4 @@
-<div ng-repeat="item in feedbackList">
+<div ng-repeat="item in vm.feedbackList">
   <div ng-if="item.isNew" class="list card">
     <div class="item item-avatar">
       <img ng-src="{{item.author.profileImage.path}}">
