@@ -2,7 +2,6 @@
 angular.module('starter.controllers')
   .controller('LoginController', ['userService', '$state', 'User', 'ERRORS',
     function(userService, $state, User, ERRORS){
-      console.log('Loaded login controller');
       var vm = this;
       vm.user = User.create();
       vm.login = function(){

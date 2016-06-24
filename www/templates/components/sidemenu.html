@@ -1,9 +1,9 @@
 <ion-view view-title="sidemenu">
   <section class="user-info">
     <div class="user-image">
-      <img src="img/placeholder/profile.jpg" alt="" class="img-responsive" />
+      <img src="{{vm.loggedUser.profileImage.path}}" alt="" class="img-responsive" />
     </div>
-    <h2 class="username">John Doe</h2>
+    <h2 class="username">{{vm.loggedUser.getFullName()}}</h2>
   </section>
   <section class="navigation">
     <div class="list">
