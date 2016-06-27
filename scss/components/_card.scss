@@ -1,0 +1,27 @@
+.card{
+  .item{
+    &.item-full-image{
+      padding: 0px;
+      border-width: 0px;
+      line-height: 0px;
+    }
+    &.item-body{
+      h2{
+        margin: 0px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.card{
+  &.isLoaded{
+    &.ng-enter{
+      opacity: 0;
+      transition: 0.3s opacity cubic-bezier(0, 0, 0.91, 0.46);
+    }
+    &.ng-enter-active{
+      opacity: 1;
+    }
+  }
+}

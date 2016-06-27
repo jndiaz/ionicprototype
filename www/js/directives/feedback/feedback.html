@@ -1,31 +1,43 @@
-<div ng-repeat="item in vm.feedbackList track by $index" class="list card">
-  <div ng-if="item.isNew">
-    <div class="item item-avatar">
-      <img ng-src="{{item.author.profileImage.path}}">
-      <h2>{{item.title}}</h2>
-      <p>{{item.dateInEnglish().month}} {{item.date.getDay()}},  {{item.date.getFullYear()}}</p>
+<ion-content class="has-infinite-scroll">
+  <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="vm.doRefresh()">
+  </ion-refresher>
+  <div ng-repeat="item in vm.feedbackList track by $index" class="list card" ng-class="{isLoaded: vm.feedbackList.length > 0}">
+    <div ng-if="item.isNew">
+      <div class="item item-avatar">
+        <img ng-src="{{item.author.profileImage.path}}">
+        <h2>{{item.title}}</h2>
+        <p>{{item.dateInEnglish().month}} {{item.date.getDay()}},  {{item.date.getFullYear()}}</p>
+      </div>
+      <div class="item item-body">
+        <img class="full-image" ng-src="{{item.image.path}}">
+        <div ng-bind-html="item.body"></div>
+        <p>
+          <a href="#" class="subdued">1 Like</a>
+          <a href="#" class="subdued">5 Comments</a>
+        </p>
+      </div>
     </div>
-    <div class="item item-body">
-      <img class="full-image" ng-src="{{item.image.path}}">
-      <div ng-bind-html="item.body"></div>
-      <p>
-        <a href="#" class="subdued">1 Like</a>
-        <a href="#" class="subdued">5 Comments</a>
-      </p>
+    <div ng-if="!item.isNew ">
+      <div class="item item-avatar">
+        <img ng-src="{{item.author.profileImage.path}}">
+        <h2>{{item.title}}</h2>
+        <p>{{item.dateInEnglish().month}} {{item.date.getDay()}},  {{item.date.getFullYear()}}</p>
+      </div>
+      <div class="item item-body">
+        <div ng-bind-html="item.description"></div>
+        <p>
+          <a href="{{item.path}}" download class="subdued">Download</a>
+          <a href="#" class="subdued">5 Comments</a>
+        </p>
+      </div>
     </div>
   </div>
-  <div ng-if="!item.isNew ">
-    <div class="item item-avatar">
-      <img ng-src="{{item.author.profileImage.path}}">
-      <h2>{{item.title}}</h2>
-      <p>{{item.dateInEnglish().month}} {{item.date.getDay()}},  {{item.date.getFullYear()}}</p>
-    </div>
-    <div class="item item-body">
-      <div ng-bind-html="item.description"></div>
-      <p>
-        <a href="{{item.path}}" download class="subdued">Download</a>
-        <a href="#" class="subdued">5 Comments</a>
-      </p>
-    </div>
-  </div>
-</div>
+  <ion-infinite-scroll
+    ng-if="vm.moreItems"
+    immediate-check="false"
+    on-infinite="vm.loadMore()"
+    distance="1%">
+  </ion-infinite-scroll>
+</ion-content>

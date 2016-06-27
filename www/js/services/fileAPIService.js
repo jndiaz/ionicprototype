@@ -22,4 +22,14 @@ angular.module('starter.services')
       return fakeServer.getNewFiles(lastItem);
     }
 
+    /* getOldFiles function
+    *  params: firstItem
+    *  return: oldItems / null
+    */
+    this.getOldFiles = function(firstItem){
+      //Fake api call
+      return fakeServer.getOldFiles(firstItem);
+    }
+
+
   }]);

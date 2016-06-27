@@ -67,6 +67,24 @@ angular.module('starter.factories')
         }
       ];
 
+      var oldNews = [
+        {
+          title: 'This is an old new',
+          subtitle: 'Subtitle for extra new',
+          date: new Date(2001, 11, 01),
+          subject: 'Biology',
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: 'img/placeholder/walter.white.jpg',
+          },
+          body: '<p>In tollit electram mea, cum cetero sadipscing ad. Amet facer facilisis nam at, eius quando per      no? Nec et agam mollis? Elitr ocurreret mel at, cu soluta putent reformidans quo! No vis magna solet? Per porro audiam copiosae ei, tota habeo et nam, cu intellegat contentiones consequuntur his!</p>',
+          image: {
+            path: 'img/placeholder/new.jpg'
+          }
+        }
+      ];
+
       var files = [
         {
           title: 'Awesome file',
@@ -107,7 +125,22 @@ angular.module('starter.factories')
           },
           path: 'fakedata/file3.txt'
         }
-      ]
+      ];
+
+      var oldFiles = [
+        {
+          title: 'Im a old file',
+          description: 'Very old',
+          date: new Date(2016, 3, 1),
+          subject: 'Biology',
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: 'img/placeholder/walter.white.jpg',
+          },
+          path: 'fakedata/file3.txt'
+        }
+      ];
 
       var users = [
         {
@@ -178,6 +211,18 @@ angular.module('starter.factories')
             }, 1000)
           })
         },
+        getOldNews: function(firstItem){
+          return $q(function(resolve, reject){
+            setTimeout(function(){
+              //Hardcoded; if random < 0.5 new items exists, otherwise not.
+              if (Math.random() < 0.5){
+                resolve(oldNews);
+              }else {
+                reject(null);
+              }
+            }, 1000)
+          })
+        },
         getFiles: function(){
           return $q(function(resolve, reject){
             setTimeout(function(){
@@ -196,6 +241,18 @@ angular.module('starter.factories')
               //Hardcoded; if random < 0.5 new items exists, otherwise not.
               if (Math.random() < 0.5){
                 resolve(extraFiles);
+              }else {
+                reject(null);
+              }
+            }, 1000)
+          })
+        },
+        getOldFiles: function(lastFile){
+          return $q(function(resolve, reject){
+            setTimeout(function(){
+              //Hardcoded; if random < 0.5 new items exists, otherwise not.
+              if (Math.random() < 0.5){
+                resolve(oldFiles);
               }else {
                 reject(null);
               }

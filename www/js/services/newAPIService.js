@@ -22,4 +22,13 @@ angular.module('starter.services')
       return fakeServer.getNewNews(lastItem);
     }
 
+    /* getOldNews function
+    *  params: firstItem
+    * return oldItems / null
+    */
+    this.getOldNews = function(firstItem){
+      //Fake api call
+      return fakeServer.getOldNews(firstItem);
+    }
+
   }]);

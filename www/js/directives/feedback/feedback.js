@@ -5,23 +5,41 @@ angular.module('starter.directives')
       var controller = ['feedbackService', '$scope', '$rootScope', function(feedbackService, $scope, $rootScope){
         var vm = this;
         vm.feedbackList = [];
+        vm.moreItems = true;
         if($scope.isGeneral){
           feedbackService.getFeedback().then(function(feedbackList){
             vm.feedbackList = feedbackList;
+            $rootScope.$broadcast('ajaxFinish');
           })
         }
-        $scope.$on('refreshFeedback', function(){
+
+        vm.doRefresh = function(){
           if($scope.isGeneral){
             feedbackService.getNewFeedback().then(function(newFeedback){
-              vm.feedbackList = newFeedback.concat(vm.feedbackList);
+              newFeedback.reverse().forEach(function(element){
+                vm.feedbackList.unshift(element);
+              });
               $rootScope.$broadcast('scroll.refreshComplete');
             }, function(error){
               $rootScope.$broadcast('scroll.refreshComplete');
             });
           }
+        };
 
-        })
+        vm.loadMore = function() {
+          feedbackService.getOldFeedback().then(function(oldFeedback){
+            oldFeedback.forEach(function(element){
+              vm.feedbackList.push(element);
+            })
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+          }, function(error){
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+          });
+        }
+
       }];
+
+
 
       return {
         restrict: 'EA',

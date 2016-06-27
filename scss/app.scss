@@ -30,6 +30,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "components/buttons";
 @import "components/navbars";
 @import "components/menu";
+@import "components/card";
+@import "components/loader.scss";
+
+//Directives
+@import "directives/ajaxcontent";
 
 //Pages
 @import "pages/login";

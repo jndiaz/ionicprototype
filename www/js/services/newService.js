@@ -21,6 +21,16 @@ angular.module('starter.services')
       })
     };
 
+    this.getOldNews = function(firstItem){
+      return $q(function(resolve, reject){
+        newAPIService.getOldNews(firstItem).then(function(rawNews){
+          resolve(parseRaw(rawNews));
+        }, function(error){
+          reject(error);
+        });
+      })
+    };
+
     function parseRaw(rawNews){
       return rawNews.map(function(rawNew){
         return New.build(

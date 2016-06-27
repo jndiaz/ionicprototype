@@ -21,6 +21,16 @@ angular.module('starter.services')
       })
     };
 
+    this.getOldFiles = function(lastItem){
+      return $q(function(resolve, reject){
+        fileAPIService.getOldFiles(lastItem).then(function(rawFiles){
+          resolve(parseRaw(rawFiles));
+        }, function(error){
+          reject(error);
+        });
+      })
+    };
+
     function parseRaw(rawFiles){
       return rawFiles.map(function(rawFile){
         return File.build(

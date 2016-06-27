@@ -14,15 +14,15 @@ angular.module('starter.services')
             rawLoggedUser.name,
             rawLoggedUser.lastname
           );
-          resolve(self.loggedUser); 
+          resolve(self.loggedUser);
         }, function(error){
           reject(error);
         });
       })
-    }
+    };
 
     this.getLoggedUser = function(){
       return this.loggedUser;
-    }
+    };
 
   }]);

@@ -13,10 +13,19 @@ angular.module('starter.services')
     }
 
     this.getNewFeedback = function(lastItem){
-      var news = [];
-      var files = [];
       var deferred = $q.defer();
       settlePromises(newService.getNewNews(lastItem).then(), fileService.getNewFiles(lastItem).then())
+        .then(function(results, errors){
+          deferred.resolve(orderFeedBack(results[0], results[1]), errors)
+        }, function(errors){
+          deferred.reject(errors);
+        });
+      return deferred.promise;
+    }
+
+    this.getOldFeedback = function(firstItem){
+      var deferred = $q.defer();
+      settlePromises(newService.getOldNews(firstItem).then(), fileService.getOldFiles(firstItem).then())
         .then(function(results, errors){
           deferred.resolve(orderFeedBack(results[0], results[1]), errors)
         }, function(errors){
