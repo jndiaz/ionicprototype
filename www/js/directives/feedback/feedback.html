@@ -1,5 +1,5 @@
-<div ng-repeat="item in vm.feedbackList track by $index">
-  <div ng-if="item.isNew" class="list card">
+<div ng-repeat="item in vm.feedbackList track by $index" class="list card">
+  <div ng-if="item.isNew">
     <div class="item item-avatar">
       <img ng-src="{{item.author.profileImage.path}}">
       <h2>{{item.title}}</h2>
@@ -14,7 +14,7 @@
       </p>
     </div>
   </div>
-  <div ng-if="!item.isNew " class="list card">
+  <div ng-if="!item.isNew ">
     <div class="item item-avatar">
       <img ng-src="{{item.author.profileImage.path}}">
       <h2>{{item.title}}</h2>
