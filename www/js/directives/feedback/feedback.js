@@ -12,8 +12,8 @@ angular.module('starter.directives')
         }
         $scope.$on('refreshFeedback', function(){
           if($scope.isGeneral){
-            feedbackService.getNewFeedback().then(function(feedbackList){
-              vm.feedbackList = feedbackList;
+            feedbackService.getNewFeedback().then(function(newFeedback){
+              vm.feedbackList = newFeedback.concat(vm.feedbackList);
               $rootScope.$broadcast('scroll.refreshComplete');
             }, function(error){
               $rootScope.$broadcast('scroll.refreshComplete');
