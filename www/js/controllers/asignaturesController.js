@@ -1,5 +1,10 @@
 //Asignatures controller
 angular.module('starter.controllers')
-  .controller('AsignaturesController', function(){
-      console.log('Loaded asignatures controller');
-    });
+  .controller('AsignaturesController', ['assignatureService', '$rootScope', function(assignatureService, $rootScope){
+      var vm = this;
+      vm.assignatures = [];
+      assignatureService.getAssignatures().then(function(assignatures){
+        vm.assignatures = assignatures;
+        $rootScope.$broadcast('ajaxFinish');
+      });
+    }]);

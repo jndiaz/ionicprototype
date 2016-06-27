@@ -4,7 +4,7 @@ angular.module('starter.services')
     this.getFiles = function(quantity){
       return $q(function(resolve, reject){
         fileAPIService.getFiles(quantity).then(function(rawFiles){
-          resolve(parseRaw(rawFiles));
+          resolve(rawFiles.map(parseRaw));
         }, function(error){
           reject(error);
         });
@@ -14,34 +14,32 @@ angular.module('starter.services')
     this.getNewFiles = function(lastItem){
       return $q(function(resolve, reject){
         fileAPIService.getNewFiles(lastItem).then(function(rawFiles){
-          resolve(parseRaw(rawFiles));
+          resolve(rawFiles.map(parseRaw));
         }, function(error){
           reject(error);
         });
       })
     };
 
-    this.getOldFiles = function(lastItem){
+    this.getOldFiles = function(firstItem){
       return $q(function(resolve, reject){
-        fileAPIService.getOldFiles(lastItem).then(function(rawFiles){
-          resolve(parseRaw(rawFiles));
+        fileAPIService.getOldFiles(firstItem).then(function(rawFiles){
+          resolve(rawFiles.map(parseRaw));
         }, function(error){
           reject(error);
         });
       })
     };
 
-    function parseRaw(rawFiles){
-      return rawFiles.map(function(rawFile){
-        return File.build(
-          rawFile.title,
-          rawFile.description,
-          rawFile.date,
-          rawFile.subject,
-          rawFile.author,
-          rawFile.path
-        );
-      });
+    function parseRaw(rawFile){
+      return File.build(
+        rawFile.title,
+        rawFile.description,
+        rawFile.date,
+        rawFile.subject,
+        rawFile.author,
+        rawFile.path
+      );
     };
 
   }]);

@@ -6,7 +6,7 @@ angular.module('starter.factories')
           title: 'New 1',
           subtitle: 'Subtitle new 1',
           date: randomDate(new Date(2016, 3, 1), new Date()),
-          subject: 'Algebra',
+          assignature: 'Algebra',
           author: {
             name: 'Walter',
             lastname: 'White',
@@ -21,7 +21,7 @@ angular.module('starter.factories')
           title: 'Another new',
           subtitle: 'Subtitle for another new',
           date: randomDate(new Date(2016, 3, 1), new Date()),
-          subject: 'Chemistry',
+          assignature: 'Chemistry',
           author: {
             name: 'Walter',
             lastname: 'White',
@@ -36,7 +36,7 @@ angular.module('starter.factories')
           title: 'Awesome new',
           subtitle: 'Awesome subtitle',
           date: randomDate(new Date(2016, 3, 1), new Date()),
-          subject: 'Awesome subject',
+          assignature: 'Awesome subject',
           author: {
             name: 'Walter',
             lastname: 'White',
@@ -54,7 +54,7 @@ angular.module('starter.factories')
           title: 'This is an extra new',
           subtitle: 'Subtitle for extra new',
           date: new Date(),
-          subject: 'Biology',
+          assignature: 'Biology',
           author: {
             name: 'Walter',
             lastname: 'White',
@@ -72,7 +72,7 @@ angular.module('starter.factories')
           title: 'This is an old new',
           subtitle: 'Subtitle for extra new',
           date: new Date(2001, 11, 01),
-          subject: 'Biology',
+          assignature: 'Biology',
           author: {
             name: 'Walter',
             lastname: 'White',
@@ -90,7 +90,7 @@ angular.module('starter.factories')
           title: 'Awesome file',
           description: 'Awesome subtitle',
           date: randomDate(new Date(2016, 3, 1), new Date()),
-          subject: 'Awesome subject',
+          assignature: 'Awesome subject',
           author: {
             name: 'Walter',
             lastname: 'White',
@@ -102,7 +102,7 @@ angular.module('starter.factories')
           title: 'Im the one',
           description: 'Who knocks.',
           date: randomDate(new Date(2016, 3, 1), new Date()),
-          subject: 'Chemistry',
+          assignature: 'Chemistry',
           author: {
             name: 'Walter',
             lastname: 'White',
@@ -117,7 +117,7 @@ angular.module('starter.factories')
           title: 'Im a new file',
           description: 'Just created',
           date: randomDate(new Date(2016, 3, 1), new Date()),
-          subject: 'Biology',
+          assignature: 'Biology',
           author: {
             name: 'Walter',
             lastname: 'White',
@@ -132,7 +132,7 @@ angular.module('starter.factories')
           title: 'Im a old file',
           description: 'Very old',
           date: new Date(2016, 3, 1),
-          subject: 'Biology',
+          assignature: 'Biology',
           author: {
             name: 'Walter',
             lastname: 'White',
@@ -163,6 +163,69 @@ angular.module('starter.factories')
           profileImage: 'img/placeholder/jesse.pinkman.jpeg',
           name: 'Jesse',
           lastname: 'Pinkman'
+        }
+      ];
+
+      var assignatures = [
+        {
+          name: 'Algebra',
+          description: 'Algebra.. and stuff.',
+          teachers: [
+            {
+              name: 'Walter',
+              lastname: 'White',
+              profileImage: 'img/placeholder/walter.white.jpg',
+            }
+          ],
+          students: [
+            {
+              name: 'Jesse',
+              lastname: 'Pinkman'
+            }
+          ],
+          image: {
+            path: 'img/placeholder/asignatures/algebra.png'
+          }
+        },
+        {
+          name: 'Calculus',
+          description: 'So much functions',
+          teachers: [
+            {
+              name: 'Walter',
+              lastname: 'White',
+              profileImage: 'img/placeholder/walter.white.jpg',
+            }
+          ],
+          students: [
+            {
+              name: 'Jesse',
+              lastname: 'Pinkman'
+            }
+          ],
+          image: {
+            path: 'img/placeholder/asignatures/calculus.jpg'
+          }
+        },
+        {
+          name: 'Algorithms',
+          description: 'Very logical.',
+          teachers: [
+            {
+              name: 'Walter',
+              lastname: 'White',
+              profileImage: 'img/placeholder/walter.white.jpg',
+            }
+          ],
+          students: [
+            {
+              name: 'Jesse',
+              lastname: 'Pinkman'
+            }
+          ],
+          image: {
+            path: 'img/placeholder/asignatures/algorithms.png'
+          }
         }
       ];
 
@@ -253,6 +316,18 @@ angular.module('starter.factories')
               //Hardcoded; if random < 0.5 new items exists, otherwise not.
               if (Math.random() < 0.5){
                 resolve(oldFiles);
+              }else {
+                reject(null);
+              }
+            }, 1000)
+          })
+        },
+        getAssignatures: function(quantity){
+          return $q(function(resolve, reject){
+            setTimeout(function(){
+              //Hardcoded
+              if (true){
+                resolve(assignatures);
               }else {
                 reject(null);
               }
