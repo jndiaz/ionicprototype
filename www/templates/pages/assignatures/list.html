@@ -1,9 +1,9 @@
-
 <ion-view view-title="Asignatures">
   <ion-pane class="asignatures">
     <ion-content>
       <ajax-content>
-        <div class="list card" ng-repeat="assignature in vm.assignatures">
+        <div class="list card" ng-repeat="assignature in vm.assignatures"
+        ui-sref="base.layout.assignatures.detail({id:assignature.id})">
           <div class="item item-full-image">
             <img class="full-image" ng-src="{{assignature.image.path}}">
           </div>

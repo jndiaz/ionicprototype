@@ -5,20 +5,16 @@ angular.module('starter.config')
 
     // Base
     .state('base', {
-      url: '',
-      templateUrl: 'templates/layout.html',
       abstract: true,
-    })
-    .state('base.home', {
-      url: '/home',
       views: {
-        'content': {
-          templateUrl: 'templates/pages/home.html',
-          controller: 'HomeController as vm',
-          data:{
-            title: 'Home'
-          }
-        },
+        '': {
+          templateUrl: 'templates/layout.html'
+        }
+      }
+    })
+    .state('base.layout', {
+      abstract: true,
+      views: {
         'navbar': {
           templateUrl: 'templates/components/navbar.html',
         },
@@ -28,23 +24,51 @@ angular.module('starter.config')
         },
       }
     })
-    .state('base.asignatures', {
-      url: '/asignatures',
+    .state('base.layout.home', {
+      url: '/home',
       views: {
-        'content': {
-          templateUrl: 'templates/pages/asignatures.html',
+        'content@base': {
+          templateUrl: 'templates/pages/home.html',
+          controller: 'HomeController as vm',
+          data:{
+            title: 'Home'
+          }
+        }
+      }
+    })
+    .state('base.layout.assignatures', {
+      abstract: true,
+      views: {
+        'content@base': {
+          templateUrl: 'templates/pages/assignatures/assignatures.html',
+          data:{
+            title: 'Assignatures'
+          }
+        }
+      }
+    })
+    .state('base.layout.assignatures.list', {
+      url: '/assignatures',
+      views: {
+        'assignature-content': {
+          templateUrl: 'templates/pages/assignatures/list.html',
           controller: 'AsignaturesController as vm',
           data:{
             title: 'Assignatures'
           }
-        },
-        'navbar': {
-          templateUrl: 'templates/components/navbar.html',
-        },
-        'sidemenu': {
-          templateUrl: 'templates/components/sidemenu.html',
-          controller: 'sideMenuController as vm'
-        },
+        }
+      }
+    })
+    .state('base.layout.assignatures.detail', {
+      url: '/assignatures/:id',
+      views: {
+        'assignature-content': {
+          templateUrl: 'templates/pages/assignatures/detail.html',
+          controller: 'AsignatureController as vm',
+          data:{
+            title: 'Assignatures'
+          }
+        }
       }
     })
     // login state

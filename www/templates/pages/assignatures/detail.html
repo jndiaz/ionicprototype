@@ -1,0 +1,17 @@
+<ion-view view-title="Asignature">
+  <ion-pane class="asignature">
+    <ajax-content>
+      <div class="list card">
+        <div class="item item-full-image">
+          <img class="full-image" ng-src="{{vm.assignature.image.path}}">
+        </div>
+        <div class="item item-body">
+          <h2>{{vm.assignature.name}}</h2>
+          <p>
+            {{vm.assignature.description}}
+          </p>
+        </div>
+      </div>
+    </ajax-content>
+  </ion-pane>
+</ion-view>

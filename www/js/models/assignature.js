@@ -1,7 +1,8 @@
 angular.module('starter.factories')
   .factory('Assignature', ['Image', function(Image){
 
-      function Assignature(name, description, image, teachers, students){
+      function Assignature(id, name, description, image, teachers, students){
+        this.id = id;
         this.name = name;
         this.description = description;
         this.image = image;
@@ -9,8 +10,8 @@ angular.module('starter.factories')
         this.students = students;
       }
 
-      Assignature.build = function(name, description, image, teachers, students){
-        return new Assignature(name, description, Image.build(image.path), teachers, students);
+      Assignature.build = function(id, name, description, image, teachers, students){
+        return new Assignature(id, name, description, Image.build(image.path), teachers, students);
       }
 
       return Assignature;

@@ -168,6 +168,7 @@ angular.module('starter.factories')
 
       var assignatures = [
         {
+          id: 1,
           name: 'Algebra',
           description: 'Algebra.. and stuff.',
           teachers: [
@@ -188,6 +189,7 @@ angular.module('starter.factories')
           }
         },
         {
+          id: 2,
           name: 'Calculus',
           description: 'So much functions',
           teachers: [
@@ -208,6 +210,7 @@ angular.module('starter.factories')
           }
         },
         {
+          id: 3,
           name: 'Algorithms',
           description: 'Very logical.',
           teachers: [
@@ -247,6 +250,16 @@ angular.module('starter.factories')
         return list.sort(function(a,b){
           return b.date - a.date;
         })
+      }
+
+      function getAssignature(id){
+        var assignature = null;
+        assignatures.forEach(function(ass){
+          if(ass.id == parseInt(id)){
+            assignature = ass;
+          }
+        });
+        return assignature;
       }
 
       return {
@@ -328,6 +341,18 @@ angular.module('starter.factories')
               //Hardcoded
               if (true){
                 resolve(assignatures);
+              }else {
+                reject(null);
+              }
+            }, 1000)
+          })
+        },
+        getAssignature: function(id){
+          return $q(function(resolve, reject){
+            setTimeout(function(){
+              var assignature = getAssignature(id);
+              if (assignature){
+                resolve(assignature);
               }else {
                 reject(null);
               }

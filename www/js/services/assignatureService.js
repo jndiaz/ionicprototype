@@ -23,12 +23,13 @@ angular.module('starter.services')
 
     function parseRaw(rawAssignature){
       return Assignature.build(
+        rawAssignature.id,
         rawAssignature.name,
         rawAssignature.description,
         rawAssignature.image,
         rawAssignature.teachers,
         rawAssignature.students
       );
-    } 
+    }
 
   }]);

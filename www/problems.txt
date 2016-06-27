@@ -1,0 +1,2 @@
+1) Repeating static elements like header and menus in every state
+2) Content margin and height hardcoded.  
