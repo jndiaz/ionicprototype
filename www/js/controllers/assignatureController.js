@@ -6,7 +6,6 @@ angular.module('starter.controllers')
       vm.assignature = [];
       assignatureService.getAssignature($stateParams.id).then(function(assignature){
         vm.assignature = assignature;
-        console.log(assignature);
         $rootScope.$broadcast('ajaxFinish');
         $ionicNavBarDelegate.title(assignature.name);
       });
