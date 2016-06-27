@@ -35,7 +35,7 @@ angular.module('starter.config')
           templateUrl: 'templates/pages/asignatures.html',
           controller: 'AsignaturesController as vm',
           data:{
-            title: 'Asignatures'
+            title: 'Assignatures'
           }
         },
         'navbar': {

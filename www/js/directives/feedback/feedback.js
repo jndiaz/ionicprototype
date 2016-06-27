@@ -33,6 +33,7 @@ angular.module('starter.directives')
             })
             $scope.$broadcast('scroll.infiniteScrollComplete');
           }, function(error){
+            vm.moreItems = false;
             $scope.$broadcast('scroll.infiniteScrollComplete');
           });
         }
