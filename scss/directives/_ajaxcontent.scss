@@ -13,6 +13,9 @@ ajax-content{
     transition-delay: 0.2s;
     &.fade{
         opacity: 0;
+        > * {
+          display: none;
+        }
     }
   }
 }

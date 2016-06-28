@@ -3,7 +3,7 @@
     <ion-content class="has-header">
       <ajax-content>
         <div class="list card" ng-repeat="assignature in vm.assignatures"
-        ui-sref="base.layout.assignatures.detail({id:assignature.id})">
+        ui-sref="base.layout.assignatures.detail.home({id:assignature.id})">
           <div class="item item-full-image">
             <img class="full-image" ng-src="{{assignature.image.path}}">
           </div>

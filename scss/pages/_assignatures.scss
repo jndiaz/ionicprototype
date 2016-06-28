@@ -1,0 +1,31 @@
+$body-color: $reading-background;
+$font-color: white;
+
+.assignature-tab{
+  margin-top: 11px;
+  .assignature{
+    .body{
+      background-color: $body-color;
+      margin-top: -5px;
+      padding: 10px 15px;
+      h2{
+        color: $font-color;
+        padding: 5px 0px;
+      }
+      p{
+        color: $font-color
+      }
+    }
+    .schedule{
+      .item.item-avatar{
+        padding: 0px 0px 0px 72px;
+        line-height: 74px;
+        .button{
+          top: 20px;
+          background: none;
+          color: $body-color;
+        }
+      }
+    }
+  }
+}

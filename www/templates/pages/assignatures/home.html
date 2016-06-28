@@ -1,0 +1,19 @@
+<ion-view view-title="Asignature - Home" class="assignature-tab">
+  <ion-pane class="assignatures">
+    <ion-content>
+      <ajax-content>
+        <feedback is-general="true" content is-child="true">
+          <div class="assignature">
+            <img class="full-image" ng-src="{{vm.assignature.image.path}}">
+            <div class="body">
+              <h2>{{vm.assignature.name}}</h2>
+              <p>
+                {{vm.assignature.description}}
+              </p>
+            </body>
+          </div>
+        </feedback>
+      </ajax-content>
+    </ion-content>
+  </ion-pane>
+</ion-view>

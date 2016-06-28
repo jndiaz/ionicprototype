@@ -57,6 +57,29 @@
   //height: 90%;
 }
 
-.has-infinite-scroll{
+.list{
+  .item-divider{
+    border: none;
+    background-color: #ECECEC;
+  }
+  .item{
+    border: none;
+    }
+  }
+  .zebra-list{
+    .item:nth-child(even){
+      background-color: #DADFE1;
+    }
+}
 
+.has-tabs-top{
+  top: 45px;
+}
+
+.bar-header.has-tabs-top{
+  top: 0px;
+}
+
+.scroll-content.has-tabs-top{
+  height: 84%;
 }

@@ -46,8 +46,10 @@ angular.module('starter.directives')
         restrict: 'EA',
         templateUrl: 'js/directives/feedback/feedback.html',
         scope: {
-          isGeneral: '@'
+          isGeneral: '@',
+          isChild: '='
         },
+        transclude: true,
         controller: controller,
         controllerAs: 'vm'
       }

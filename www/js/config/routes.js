@@ -60,14 +60,38 @@ angular.module('starter.config')
       }
     })
     .state('base.layout.assignatures.detail', {
+      abstract: true,
       url: '/assignatures/:id',
       views: {
         'assignature-content': {
           templateUrl: 'templates/pages/assignatures/detail.html',
-          controller: 'AsignatureController as vm',
-          data:{
-            title: 'Assignatures'
-          }
+        }
+      }
+    })
+    .state('base.layout.assignatures.detail.home', {
+      url: '',
+      views: {
+        'tab-home': {
+          templateUrl: 'templates/pages/assignatures/home.html',
+          controller: 'AsignatureDetailController as vm',
+        }
+      }
+    })
+    .state('base.layout.assignatures.detail.schedule', {
+      url: '/schedule',
+      views: {
+        'tab-schedule': {
+          templateUrl: 'templates/pages/assignatures/schedule.html',
+          controller: 'AsignaturesScheduleController as vm',
+        }
+      }
+    })
+    .state('base.layout.assignatures.detail.teachers', {
+      url: '/teachers',
+      views: {
+        'tab-teachers': {
+          templateUrl: 'templates/pages/assignatures/teachers.html',
+          controller: 'AsignaturesTeachersController as vm',
         }
       }
     })
