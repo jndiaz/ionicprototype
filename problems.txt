@@ -1,1 +1,2 @@
-1) Content margin and height hardcoded.  
+1) Content height hardcoded.
+2) Herency in common properties

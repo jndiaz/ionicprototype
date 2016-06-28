@@ -5,6 +5,9 @@ angular.module('starter.directives')
       var controller = ['$scope', function($scope, $rootScope){
         var vm = this;
         vm.isLoading = true;
+        $scope.$on('ajaxStart', function(){
+            vm.isLoading = true;
+        });
         $scope.$on('ajaxFinish', function(){
             vm.isLoading = false;
         });
@@ -14,9 +17,7 @@ angular.module('starter.directives')
       return {
         restrict: 'EA',
         templateUrl: 'js/directives/ajaxcontent/ajaxcontent.html',
-        scope: {
-          isGeneral: '@'
-        },
+        scope: {},
         transclude: true,
         controller: controller,
         controllerAs: 'vm'

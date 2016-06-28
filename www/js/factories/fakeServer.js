@@ -232,6 +232,152 @@ angular.module('starter.factories')
         }
       ];
 
+      var root = {
+        folders: [
+          {
+            id: 1,
+            title: 'First Module',
+            author: {
+              name: 'Walter',
+              lastname: 'White',
+              profileImage: 'img/placeholder/walter.white.jpg',
+            },
+            files: []
+          },
+          {
+            id: 2,
+            title: 'Second Module',
+            author: {
+              name: 'Walter',
+              lastname: 'White',
+              profileImage: 'img/placeholder/walter.white.jpg',
+            },
+            files: []
+          },
+        ],
+        files: [
+          {
+            id: 1,
+            title: 'Awesome file',
+            description: 'Awesome subtitle',
+            date: randomDate(new Date(2016, 3, 1), new Date()),
+            assignature: 'Awesome subject',
+            author: {
+              name: 'Walter',
+              lastname: 'White',
+              profileImage: 'img/placeholder/walter.white.jpg',
+            },
+            path: 'fakedata/file1.txt'
+          },
+          {
+            id: 2,
+            title: 'Awesome file',
+            description: 'Awesome subtitle',
+            date: randomDate(new Date(2016, 3, 1), new Date()),
+            assignature: 'Awesome subject',
+            author: {
+              name: 'Walter',
+              lastname: 'White',
+              profileImage: 'img/placeholder/walter.white.jpg',
+            },
+            path: 'fakedata/file1.txt'
+          },
+          {
+            id: 3,
+            title: 'Awesome file',
+            description: 'Awesome subtitle',
+            date: randomDate(new Date(2016, 3, 1), new Date()),
+            assignature: 'Awesome subject',
+            author: {
+              name: 'Walter',
+              lastname: 'White',
+              profileImage: 'img/placeholder/walter.white.jpg',
+            },
+            path: 'fakedata/file1.txt'
+          },
+          {
+            id: 4,
+            title: 'Awesome file',
+            description: 'Awesome subtitle',
+            date: randomDate(new Date(2016, 3, 1), new Date()),
+            assignature: 'Awesome subject',
+            author: {
+              name: 'Walter',
+              lastname: 'White',
+              profileImage: 'img/placeholder/walter.white.jpg',
+            },
+            path: 'fakedata/file1.txt'
+          }
+        ]
+      };
+
+      var folders = [
+        {
+          id: 1,
+          title: 'First Module',
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: 'img/placeholder/walter.white.jpg',
+          },
+          content: {
+            folders: [
+              {
+                id: 3,
+                title: 'Inside folder',
+                author: {
+                  name: 'Walter',
+                  lastname: 'White',
+                  profileImage: 'img/placeholder/walter.white.jpg',
+                },
+                files: []
+              },
+            ],
+            files: [
+              {
+                id: 5,
+                title: 'Inside file',
+                description: 'Awesome subtitle',
+                date: randomDate(new Date(2016, 3, 1), new Date()),
+                assignature: 'Awesome subject',
+                author: {
+                  name: 'Walter',
+                  lastname: 'White',
+                  profileImage: 'img/placeholder/walter.white.jpg',
+                },
+                path: 'fakedata/file1.txt'
+              },
+            ],
+          }
+        },
+        {
+          id: 2,
+          title: 'Second Module',
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: 'img/placeholder/walter.white.jpg',
+          },
+          content: {
+            folders: [],
+            files: []
+          }
+        },
+        {
+          id: 3,
+          title: 'Inside folder',
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: 'img/placeholder/walter.white.jpg',
+          },
+          content: {
+            folders: [],
+            files: []
+          }
+        },
+      ];
+
       function login(user){
         var found = null;
         users.forEach(function(element){
@@ -260,6 +406,16 @@ angular.module('starter.factories')
           }
         });
         return assignature;
+      }
+
+      function getFolderContent(id){
+        var folderContent = null;
+        folders.forEach(function(folderC){
+          if(folderC.id == parseInt(id)){
+            folderContent = folderC;
+          }
+        });
+        return folderContent.content;
       }
 
       return {
@@ -353,6 +509,30 @@ angular.module('starter.factories')
               var assignature = getAssignature(id);
               if (assignature){
                 resolve(assignature);
+              }else {
+                reject(null);
+              }
+            }, 1000)
+          })
+        },
+        getAssignatureRoot: function(id){
+          return $q(function(resolve, reject){
+            setTimeout(function(){
+              //Hardcoded
+              if (true){
+                resolve(root);
+              }else {
+                reject(null);
+              }
+            }, 1000)
+          })
+        },
+        getFolderContent: function(id){
+          return $q(function(resolve, reject){
+            setTimeout(function(){
+              var folderContent = getFolderContent(id);
+              if (folderContent){
+                resolve(folderContent);
               }else {
                 reject(null);
               }

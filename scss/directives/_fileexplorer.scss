@@ -1,0 +1,49 @@
+.card{
+  &.file{
+    margin: 10px;
+  }
+}
+
+.folders{
+  .list:last-child.card{
+    margin-bottom: 10px;
+  }
+}
+
+.files{
+  .row{
+    padding: 0px 6px;
+    .col{
+      padding: 0px;
+      .card.file{
+        margin: 5px;
+        text-align: center;
+        .item{
+          text-overflow: initial;
+          white-space: normal;
+        }
+      }
+    }
+  }
+}
+
+.popover-file{
+  height: 165px;
+}
+
+.breadcrumbs{
+  padding: 12px 20px;
+  font-size: 20px;
+  line-height: 20px;
+  i{
+    font-size: 15px;
+  }
+  span.active{
+    color: $color-primary;
+  }
+}
+
+.empty-folder{
+  font-size: 20px;
+  padding: 20px;
+}

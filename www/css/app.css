@@ -9906,6 +9906,16 @@ a.button {
     background: black;
     overflow: hidden; }
 
+.card .item.item-more {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  padding: 0px;
+  font-size: 30px; }
+
+.card .item.item-image i {
+  font-size: 40px; }
+
 .card .item.item-full-image {
   padding: 0px;
   border-width: 0px;
@@ -9951,6 +9961,39 @@ ajax-content [content] {
     opacity: 0; }
     ajax-content [content].fade > * {
       display: none; }
+
+.card.file {
+  margin: 10px; }
+
+.folders .list:last-child.card {
+  margin-bottom: 10px; }
+
+.files .row {
+  padding: 0px 6px; }
+  .files .row .col {
+    padding: 0px; }
+    .files .row .col .card.file {
+      margin: 5px;
+      text-align: center; }
+      .files .row .col .card.file .item {
+        text-overflow: initial;
+        white-space: normal; }
+
+.popover-file {
+  height: 165px; }
+
+.breadcrumbs {
+  padding: 12px 20px;
+  font-size: 20px;
+  line-height: 20px; }
+  .breadcrumbs i {
+    font-size: 15px; }
+  .breadcrumbs span.active {
+    color: #c0392b; }
+
+.empty-folder {
+  font-size: 20px;
+  padding: 20px; }
 
 .login .login-form {
   padding: 10px 50px;

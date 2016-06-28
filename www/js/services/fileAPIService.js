@@ -31,5 +31,23 @@ angular.module('starter.services')
       return fakeServer.getOldFiles(firstItem);
     }
 
+    /* getAssignatureRootFiles function
+    *  params: assignature id
+    *  return: root files and folders / null
+    */
+    this.getAssignatureRoot = function(id){
+      //Fake api call
+      return fakeServer.getAssignatureRoot(id);
+    }
+
+    /* getFolderContent function
+    *  params: folder id
+    *  return: folder files and folders / null
+    */
+    this.getFolderContent = function(id){
+      //Fake api call
+      return fakeServer.getFolderContent(id);
+    }
+
 
   }]);
