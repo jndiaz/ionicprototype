@@ -95,6 +95,15 @@ angular.module('starter.config')
         }
       }
     })
+    .state('base.layout.assignatures.detail.files', {
+      url: '/files',
+      views: {
+        'tab-files': {
+          templateUrl: 'templates/pages/assignatures/files.html',
+          controller: 'AsignaturesFilesController as vm',
+        }
+      }
+    })
     // login state
     .state('login', {
       url: '/login',
