@@ -7,7 +7,7 @@ angular.module('starter.controllers')
       vm.login = function(){
         if(vm.user.isValid()){
           userService.login(vm.user).then(function(user){
-            $state.go('base.home');
+            $state.go('base.layout.home');
           }, function(error){
             showError(ERRORS.BAD_CREDENTIALS);
           });
