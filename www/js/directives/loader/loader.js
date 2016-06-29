@@ -1,4 +1,4 @@
-//Feedback directive
+//Loader directive
 angular.module('starter.directives')
   .directive('loader', function(){
 

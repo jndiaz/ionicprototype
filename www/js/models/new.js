@@ -1,7 +1,8 @@
 angular.module('starter.models')
   .factory('New', ['Utils', 'ImageResource', 'User','Assignature',  function(Utils, ImageResource, User, Assignature){
 
-      function New(title, subtitle, date, assignature, author, body, image){
+      function New(id, title, subtitle, date, assignature, author, body, image){
+        this.id = id;
         this.title = title;
         this.subtitle = subtitle;
         this.date = date;
@@ -31,6 +32,7 @@ angular.module('starter.models')
 
       function parseRaw(rawNew){
           return new New(
+            rawNew.id,
             rawNew.title,
             rawNew.subtitle,
             rawNew.date,

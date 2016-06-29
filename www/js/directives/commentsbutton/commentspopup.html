@@ -1,0 +1,10 @@
+<div class="comments">
+  <div class="item item-button-right item-avatar" ng-repeat="comment in comments">
+    <img ng-src="{{comment.author.profileImage.path}}">
+    <h3>{{comment.author.name}} {{comment.author.lastname}}</h3>
+    <p>
+      {{comment.content}}
+    </p>
+    <span class="since">A moment ago</span>
+  </div>
+</div>

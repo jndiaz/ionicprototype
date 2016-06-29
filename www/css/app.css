@@ -10037,3 +10037,24 @@ ajax-content [content] {
       top: 20px;
       background: none;
       color: #C0392B; }
+
+.comments-popup .popup {
+  min-height: 90%;
+  width: 90%;
+  background-color: white;
+  border-radius: 2px;
+  padding: 10px; }
+
+.comments-popup .popup-head {
+  text-align: left; }
+
+.comments-popup .popup-body {
+  padding: 0px; }
+  .comments-popup .popup-body .item {
+    border: none; }
+    .comments-popup .popup-body .item p {
+      text-overflow: initial;
+      white-space: normal; }
+    .comments-popup .popup-body .item .since {
+      font-style: italic;
+      font-size: 13px; }

@@ -3,6 +3,7 @@ angular.module('starter.factories')
 
       var news = [
         {
+          id: 1,
           title: 'New 1',
           subtitle: 'Subtitle new 1',
           date: randomDate(new Date(2016, 3, 1), new Date()),
@@ -23,6 +24,7 @@ angular.module('starter.factories')
           }
         },
         {
+          id: 2,
           title: 'Another new',
           subtitle: 'Subtitle for another new',
           date: randomDate(new Date(2016, 3, 1), new Date()),
@@ -43,6 +45,7 @@ angular.module('starter.factories')
           }
         },
         {
+          id: 3,
           title: 'Awesome new',
           subtitle: 'Awesome subtitle',
           date: randomDate(new Date(2016, 3, 1), new Date()),
@@ -66,6 +69,7 @@ angular.module('starter.factories')
 
       var extraNews = [
         {
+          id: 4,
           title: 'This is an extra new',
           subtitle: 'Subtitle for extra new',
           date: new Date(),
@@ -89,6 +93,7 @@ angular.module('starter.factories')
 
       var oldNews = [
         {
+          id: 5,
           title: 'This is an old new',
           subtitle: 'Subtitle for extra new',
           date: new Date(2001, 11, 01),
@@ -467,6 +472,76 @@ angular.module('starter.factories')
         }
       ];
 
+      var comments = [
+        {
+          id: 1,
+          parentId: 1,
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            }
+          },
+          content: 'This is a comment.',
+          createdAt: new Date()
+        },
+        {
+          id: 2,
+          parentId: 2,
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            }
+          },
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          createdAt: new Date().setMinutes(new Date().getMinutes() - 1)
+        },
+        {
+          id: 3,
+          parentId: 3,
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            }
+          },
+          content: 'At vero eos et accusamus et iusto odio dignissimos.',
+          createdAt: new Date().setHours(new Date().getHours() - 1)
+        },
+        {
+          id: 4,
+          parentId: 1,
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            }
+          },
+          content: 'Nunc ligula purus, rhoncus ut lorem a, pretium luctus elit.',
+            createdAt: new Date().setHours(new Date().getHours() - 2)
+        },
+        {
+          id: 5,
+          parentId: 1,
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            }
+          },
+          content: 'Curabitur sed tortor quis justo luctus tempor. Nam sagittis sem lacus, a elementum leo rutrum quis. Phasellus porta tortor in pellentesque tincidunt. Phasellus at viverra diam.',
+            createdAt: new Date().setHours(new Date().getMonth() - 2)
+        },
+      ];
+
+
+
       function login(user){
         var found = null;
         users.forEach(function(element){
@@ -505,6 +580,16 @@ angular.module('starter.factories')
           }
         });
         return folderContent.content;
+      }
+
+      function getCommentsByParent(id){
+          var commentsByParent = [];
+          comments.forEach(function(comment){
+            if(comment.parentId == parseInt(id)){
+              commentsByParent.push(comment);
+            }
+          })
+          return commentsByParent;
       }
 
       return {
@@ -646,6 +731,30 @@ angular.module('starter.factories')
               //Hardcoded
               if (true){
                 resolve(teachers);
+              }else {
+                reject(null);
+              }
+            }, 1000)
+          })
+        },
+        getCommentsByParent: function(id){
+          return $q(function(resolve, reject){
+            setTimeout(function(){
+              //Hardcoded
+              if (true){
+                resolve(getCommentsByParent(id));
+              }else {
+                reject(null);
+              }
+            }, 1000)
+          })
+        },
+        getCommentsCounterByParent: function(id){
+          return $q(function(resolve, reject){
+            setTimeout(function(){
+              //Hardcoded
+              if (true){
+                resolve(getCommentsByParent(id).length);
               }else {
                 reject(null);
               }

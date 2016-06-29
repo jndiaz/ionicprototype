@@ -1,0 +1,26 @@
+.comments-popup{
+  .popup{
+    min-height: 90%;
+    width: 90%;
+    background-color: white;
+    border-radius: 2px;
+    padding: 10px;
+  }
+  .popup-head{
+    text-align: left;
+  }
+  .popup-body{
+    padding: 0px;
+    .item{
+      border: none;
+      p{
+        text-overflow: initial;
+        white-space: normal;
+      }
+      .since{
+        font-style: italic;
+        font-size: 13px;
+      }
+    }
+  }
+}

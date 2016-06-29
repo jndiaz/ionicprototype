@@ -1,4 +1,4 @@
-//Feedback directive
+//Fileexplorer directive
 angular.module('starter.directives')
   .directive('fileExplorer', function(){
 
