@@ -15,8 +15,18 @@ angular.module('starter.factories')
         return matrix;
       }
 
+      var getLongMonthNameByLanguage = function(date, lang){
+        return date.toLocaleString(lang, {month: 'long'})
+      }
+
+      var getShortMonthNameByLanguage = function(date, lang){
+        return date.toLocaleString(lang, {month: 'short'})
+      }
+
       return {
-        splitIntoColumns: splitIntoColumns
+        splitIntoColumns: splitIntoColumns,
+        getLongMonthNameByLanguage: getLongMonthNameByLanguage,
+        getShortMonthNameByLanguage: getShortMonthNameByLanguage
       };
 
   });

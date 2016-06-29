@@ -1,14 +1,18 @@
-angular.module('starter.factories')
-  .factory('Image', function(){
+angular.module('starter.models')
+  .factory('ImageResource', function(){
 
-      function Image(path){
+      function ImageResource(path){
         this.path = path;
       }
 
-      Image.build = function(path){
-        return new Image(path);
+      ImageResource.build = function(rawImageResource){
+        return parseRaw(rawImageResource);
       }
 
-      return Image;
+      function parseRaw(rawImageResource){
+        return new ImageResource(rawImageResource.path)
+      }
+
+      return ImageResource;
 
   });

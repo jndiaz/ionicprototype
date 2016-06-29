@@ -6,4 +6,13 @@ angular.module('starter.config')
   })
   .constant('MESSAGES', {
     'EMPTY_FOLDER' : 'This folder is empty.'
+  })
+  .constant('DAYS', {
+    'ENGLISH' : {
+      'MONDAY' : 'Monday',
+      'TUESDAY' : 'Tuesday',
+      'WEDNESDAY' : 'Wednesday',
+      'THURSDAY': 'Thursday',
+      'FRIDAY': 'Friday'
+    }
   });

@@ -4,7 +4,7 @@ angular.module('starter.services')
     this.getNews = function(quantity){
       return $q(function(resolve, reject){
         newAPIService.getNews(quantity).then(function(rawNews){
-          resolve(rawNews.map(parseRaw));
+          resolve(rawNews.map(New.build));
         }, function(error){
           reject(error);
         });
@@ -14,7 +14,7 @@ angular.module('starter.services')
     this.getNewNews = function(lastItem){
       return $q(function(resolve, reject){
         newAPIService.getNewNews(lastItem).then(function(rawNews){
-          resolve(rawNews.map(parseRaw));
+          resolve(rawNews.map(New.build));
         }, function(error){
           reject(error);
         });
@@ -24,23 +24,11 @@ angular.module('starter.services')
     this.getOldNews = function(firstItem){
       return $q(function(resolve, reject){
         newAPIService.getOldNews(firstItem).then(function(rawNews){
-          resolve(rawNews.map(parseRaw));
+          resolve(rawNews.map(New.build));
         }, function(error){
           reject(error);
         });
       })
     };
-
-    function parseRaw(rawNew){
-        return New.build(
-          rawNew.title,
-          rawNew.subtitle,
-          rawNew.date,
-          rawNew.subject,
-          rawNew.author,
-          rawNew.body,
-          rawNew.image
-        );
-    }
 
   }]);

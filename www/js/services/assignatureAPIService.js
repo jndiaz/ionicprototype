@@ -22,4 +22,13 @@ angular.module('starter.services')
       return fakeServer.getAssignature(id);
     }
 
+    /* getAssignatureTeachers function
+    *  params: assignature id
+    *  return: teachers / null
+    */
+    this.getAssignatureTeachers = function(id){
+      //Fake api call
+      return fakeServer.getAssignatureTeachers(id);
+    }
+
   }]);

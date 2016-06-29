@@ -1,5 +1,5 @@
-angular.module('starter.factories')
-  .factory('Folder', ['User', 'dateHelper', function(User, dateHelper){
+angular.module('starter.models')
+  .factory('Folder', ['User', 'Utils', function(User, Utils){
 
       function Folder(id, title, description, date, subject, author, path, content){
         this.id = id;
@@ -17,7 +17,7 @@ angular.module('starter.factories')
 
       Folder.prototype.dateInEnglish = function(){
         return {
-          month: dateHelper.getLongMonthNameByLanguage(this.date, 'en-us')
+          month: Utils.getLongMonthNameByLanguage(this.date, 'en-us')
         }
       }
 
@@ -25,10 +25,21 @@ angular.module('starter.factories')
         return new Folder();
       }
 
-      Folder.build = function(id, title, date, subject, author, path, content){
-        return new Folder(id, title, date, subject,
-          User.buildSimplefied(author.name, author.lastname, author.profileImage), path, content);
+      Folder.build = function(rawFolder){
+        return parseRaw(rawFolder);
       }
+
+      function parseRaw(rawFolder){
+        return new Folder(
+          rawFolder.id,
+          rawFolder.title,
+          rawFolder.date,
+          rawFolder.subject,
+          User.buildSimplefied(rawFolder.author),
+          rawFolder.path,
+          rawFolder.content
+        );
+      };
 
       return Folder;
 

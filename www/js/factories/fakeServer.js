@@ -6,11 +6,16 @@ angular.module('starter.factories')
           title: 'New 1',
           subtitle: 'Subtitle new 1',
           date: randomDate(new Date(2016, 3, 1), new Date()),
-          assignature: 'Algebra',
+          assignature: {
+            id: 1,
+            name: 'Algebra'
+          },
           author: {
             name: 'Walter',
             lastname: 'White',
-            profileImage: 'img/placeholder/walter.white.jpg',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            },
           },
           body: '<p>In tollit electram mea, cum cetero sadipscing ad. Amet facer facilisis nam at, eius quando per      no? Nec et agam mollis? Elitr ocurreret mel at, cu soluta putent reformidans quo! No vis magna solet? Per porro audiam copiosae ei, tota habeo et nam, cu intellegat contentiones consequuntur his!</p><p>Ex pri nonumy alterum suscipit, vero consul facilisis at usu? Ex vel atomorum volutpat periculis, utinam postulant eum in. An postea atomorum salutandi mel, cu case quas utinam vix. Cu movet veniam has.</p>',
           image: {
@@ -21,11 +26,16 @@ angular.module('starter.factories')
           title: 'Another new',
           subtitle: 'Subtitle for another new',
           date: randomDate(new Date(2016, 3, 1), new Date()),
-          assignature: 'Chemistry',
+          assignature: {
+            id: 2,
+            name: 'Calculus'
+          },
           author: {
             name: 'Walter',
             lastname: 'White',
-            profileImage: 'img/placeholder/walter.white.jpg',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            },
           },
           body: '<p>In tollit electram mea, cum cetero sadipscing ad. Amet facer facilisis nam at, eius quando per      no? Nec et agam mollis? Elitr ocurreret mel at, cu soluta putent reformidans quo! No vis magna solet? Per porro audiam copiosae ei, tota habeo et nam, cu intellegat contentiones consequuntur his!</p>',
           image: {
@@ -36,11 +46,16 @@ angular.module('starter.factories')
           title: 'Awesome new',
           subtitle: 'Awesome subtitle',
           date: randomDate(new Date(2016, 3, 1), new Date()),
-          assignature: 'Awesome subject',
+          assignature: {
+            id: 3,
+            name: 'Algorithms'
+          },
           author: {
             name: 'Walter',
             lastname: 'White',
-            profileImage: 'img/placeholder/walter.white.jpg',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            },
           },
           body: '<p>In tollit electram mea, cum cetero sadipscing ad. Amet facer facilisis nam at, eius quando per      no? Nec et agam mollis? Elitr ocurreret mel at, cu soluta putent reformidans quo! No vis magna solet? Per porro audiam copiosae ei, tota habeo et nam, cu intellegat contentiones consequuntur his!</p><p>Ex pri nonumy alterum suscipit, vero consul facilisis at usu? Ex vel atomorum volutpat periculis, utinam postulant eum in. An postea atomorum salutandi mel, cu case quas utinam vix. Cu movet veniam has.</p>',
           image: {
@@ -54,11 +69,16 @@ angular.module('starter.factories')
           title: 'This is an extra new',
           subtitle: 'Subtitle for extra new',
           date: new Date(),
-          assignature: 'Biology',
+          assignature: {
+            id: 1,
+            name: 'Algebra'
+          },
           author: {
             name: 'Walter',
             lastname: 'White',
-            profileImage: 'img/placeholder/walter.white.jpg',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            },
           },
           body: '<p>In tollit electram mea, cum cetero sadipscing ad. Amet facer facilisis nam at, eius quando per      no? Nec et agam mollis? Elitr ocurreret mel at, cu soluta putent reformidans quo! No vis magna solet? Per porro audiam copiosae ei, tota habeo et nam, cu intellegat contentiones consequuntur his!</p>',
           image: {
@@ -76,7 +96,9 @@ angular.module('starter.factories')
           author: {
             name: 'Walter',
             lastname: 'White',
-            profileImage: 'img/placeholder/walter.white.jpg',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            },
           },
           body: '<p>In tollit electram mea, cum cetero sadipscing ad. Amet facer facilisis nam at, eius quando per      no? Nec et agam mollis? Elitr ocurreret mel at, cu soluta putent reformidans quo! No vis magna solet? Per porro audiam copiosae ei, tota habeo et nam, cu intellegat contentiones consequuntur his!</p>',
           image: {
@@ -94,7 +116,9 @@ angular.module('starter.factories')
           author: {
             name: 'Walter',
             lastname: 'White',
-            profileImage: 'img/placeholder/walter.white.jpg',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            },
           },
           path: 'fakedata/file1.txt'
         },
@@ -106,7 +130,9 @@ angular.module('starter.factories')
           author: {
             name: 'Walter',
             lastname: 'White',
-            profileImage: 'img/placeholder/walter.white.jpg',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            },
           },
           path: 'fakedata/file2.txt'
         }
@@ -121,7 +147,9 @@ angular.module('starter.factories')
           author: {
             name: 'Walter',
             lastname: 'White',
-            profileImage: 'img/placeholder/walter.white.jpg',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            },
           },
           path: 'fakedata/file3.txt'
         }
@@ -136,7 +164,9 @@ angular.module('starter.factories')
           author: {
             name: 'Walter',
             lastname: 'White',
-            profileImage: 'img/placeholder/walter.white.jpg',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            },
           },
           path: 'fakedata/file3.txt'
         }
@@ -146,21 +176,27 @@ angular.module('starter.factories')
         {
           username: 'admin',
           password: 'admin',
-          profileImage: 'img/placeholder/profile.jpg',
+          profileImage: {
+            path: 'img/placeholder/profile.jpg'
+          },
           name: 'Allmighty',
           lastname: 'Admin'
         },
         {
           username: 'teacher',
           password: 'teacher',
-          profileImage: 'img/placeholder/walter.white.jpg',
+          profileImage: {
+            path: 'img/placeholder/walter.white.jpg'
+          },
           name: 'Walter',
           lastname: 'White'
         },
         {
           username: 'student',
           password: 'student',
-          profileImage: 'img/placeholder/jesse.pinkman.jpeg',
+          profileImage: {
+            path: 'img/placeholder/jesse.pinkman.jpeg'
+          },
           name: 'Jesse',
           lastname: 'Pinkman'
         }
@@ -378,6 +414,59 @@ angular.module('starter.factories')
         },
       ];
 
+      var courses = [
+        {
+          id: 1,
+          name: 'Course 101',
+          classes: [
+            {
+              id: 1,
+              day: 'Monday',
+              startTime: '09:30',
+              endTime: '12:30'
+            },
+            {
+              id: 2,
+              day: 'Tuesday',
+              startTime: '10:30',
+              endTime: '12:30'
+            }
+          ],
+          teachers: [],
+          students: []
+        },
+        {
+          id: 2,
+          name: 'Course 102',
+          classes: [
+            {
+              id: 1,
+              day: 'Wednesday',
+              startTime: '12:30',
+              endTime: '14:30'
+            },
+            {
+              id: 2,
+              day: 'Friday',
+              startTime: '15:30',
+              endTime: '17:30'
+            }
+          ],
+          teachers: [],
+          students: []
+        }
+      ];
+
+      var teachers = [
+        {
+          name: 'Walter',
+          lastname: 'White',
+          profileImage: {
+            path: 'img/placeholder/walter.white.jpg'
+          },
+        }
+      ];
+
       function login(user){
         var found = null;
         users.forEach(function(element){
@@ -533,6 +622,30 @@ angular.module('starter.factories')
               var folderContent = getFolderContent(id);
               if (folderContent){
                 resolve(folderContent);
+              }else {
+                reject(null);
+              }
+            }, 1000)
+          })
+        },
+        getCoursesFromAssignature: function(id){
+          return $q(function(resolve, reject){
+            setTimeout(function(){
+              //Hardcoded
+              if (true){
+                resolve(courses);
+              }else {
+                reject(null);
+              }
+            }, 1000)
+          })
+        },
+        getAssignatureTeachers: function(id){
+          return $q(function(resolve, reject){
+            setTimeout(function(){
+              //Hardcoded
+              if (true){
+                resolve(teachers);
               }else {
                 reject(null);
               }

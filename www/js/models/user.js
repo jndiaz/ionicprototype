@@ -1,5 +1,5 @@
-angular.module('starter.factories')
-  .factory('User', ['Image', function(Image){
+angular.module('starter.models')
+  .factory('User', ['ImageResource', function(ImageResource){
 
       function User(username, password, profileImage, name, lastname){
         this.username = username;
@@ -25,13 +25,33 @@ angular.module('starter.factories')
         return new User();
       };
 
-      User.build = function(username, password, profileImage, name, lastname){
-        return new User(username, password, Image.build(profileImage), name, lastname);
+      User.build = function(rawUser){
+        return parseRaw(rawUser);
       };
 
-      User.buildSimplefied = function(name, lastname, profileImage){
-        return new User(null, null, Image.build(profileImage), name, lastname);
+      User.buildSimplefied = function(rawUser){
+        return parseRawSimplefied(rawUser);
       };
+
+      function parseRaw(rawUser){
+        return new User(
+          rawUser.username,
+          rawUser.password,
+          ImageResource.build(rawUser.profileImage),
+          rawUser.name,
+          rawUser.lastname
+        );
+      };
+
+      function parseRawSimplefied(rawUser){
+        return new User(
+          null,
+          null,
+          ImageResource.build(rawUser.profileImage),
+          rawUser.name,
+          rawUser.lastname
+        );
+      }
 
       return User;
 

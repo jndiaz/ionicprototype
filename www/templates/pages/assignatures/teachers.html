@@ -1,45 +1,19 @@
 <ion-view view-title="Asignature - Schedule" class="assignature-tab">
   <ion-pane class="assignature">
     <ion-content>
-      <div class="list schedule">
-        <div class="zebra-list">
-          <div class="item item-button-right item-avatar">
-            <img src="img/placeholder/walter.white.jpg">
-            Walter White
-            <button class="button">
-              <i class="icon ion-email"></i>
-            </button>
-          </div>
-          <div class="item item-button-right item-avatar">
-            <img src="img/placeholder/walter.white.jpg">
-            Walter White
-            <button class="button">
-              <i class="icon ion-email"></i>
-            </button>
-          </div>
-          <div class="item item-button-right item-avatar">
-            <img src="img/placeholder/walter.white.jpg">
-            Walter White
-            <button class="button">
-              <i class="icon ion-email"></i>
-            </button>
-          </div>
-          <div class="item item-button-right item-avatar">
-            <img src="img/placeholder/walter.white.jpg">
-            Walter White
-            <button class="button">
-              <i class="icon ion-email"></i>
-            </button>
-          </div>
-          <div class="item item-button-right item-avatar">
-            <img src="img/placeholder/walter.white.jpg">
-            Walter White
-            <button class="button">
-              <i class="icon ion-email"></i>
-            </button>
+      <ajax-content>
+        <div class="list schedule">
+          <div class="zebra-list">
+            <div class="item item-button-right item-avatar" ng-repeat="teacher in vm.teachers">
+              <img ng-src="{{teacher.profileImage.path}}">
+              {{teacher.name}} {{teacher.lastname}}
+              <button class="button">
+                <i class="icon ion-email"></i>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </ajax-content>
     </ion-content>
   </ion-pane>
 </ion-view>

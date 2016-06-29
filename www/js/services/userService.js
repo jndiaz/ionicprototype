@@ -7,13 +7,7 @@ angular.module('starter.services')
       var self = this;
       return $q(function(resolve, reject){
         userAPIService.login(user).then(function(rawLoggedUser){
-          self.loggedUser = User.build(
-            rawLoggedUser.username,
-            rawLoggedUser.password,
-            rawLoggedUser.profileImage,
-            rawLoggedUser.name,
-            rawLoggedUser.lastname
-          );
+          self.loggedUser = User.build(rawLoggedUser);
           resolve(self.loggedUser);
         }, function(error){
           reject(error);

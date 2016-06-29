@@ -1,10 +1,11 @@
 angular.module('starter.services')
-  .service('assignatureService', ['assignatureAPIService', '$q', 'Assignature', function(assignatureAPIService, $q, Assignature){
+  .service('assignatureService', ['assignatureAPIService', '$q', 'Assignature', 'User',
+  function(assignatureAPIService, $q, Assignature, User){
 
     this.getAssignatures = function(quantity){
       return $q(function(resolve, reject){
         assignatureAPIService.getAssignatures(quantity).then(function(rawAssignatures){
-          resolve(rawAssignatures.map(parseRaw));
+          resolve(rawAssignatures.map(Assignature.build));
         }, function(error){
           reject(error);
         });
@@ -14,22 +15,21 @@ angular.module('starter.services')
     this.getAssignature = function(id){
       return $q(function(resolve, reject){
         assignatureAPIService.getAssignature(id).then(function(rawAssignature){
-          resolve(parseRaw(rawAssignature));
+          resolve(Assignature.build(rawAssignature));
         }, function(error){
           reject(error);
         });
       })
     };
 
-    function parseRaw(rawAssignature){
-      return Assignature.build(
-        rawAssignature.id,
-        rawAssignature.name,
-        rawAssignature.description,
-        rawAssignature.image,
-        rawAssignature.teachers,
-        rawAssignature.students
-      );
-    }
+    this.getAssignatureTeachers = function(id){
+      return $q(function(resolve, reject){
+        assignatureAPIService.getAssignatureTeachers(id).then(function(rawTeachers){
+          resolve(rawTeachers.map(User.build));
+        }, function(error){
+          reject(error);
+        });
+      })
+    };
 
   }]);

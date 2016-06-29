@@ -4,7 +4,7 @@ angular.module('starter.services')
     this.getFiles = function(quantity){
       return $q(function(resolve, reject){
         fileAPIService.getFiles(quantity).then(function(rawFiles){
-          resolve(rawFiles.map(parseRaw));
+          resolve(rawFiles.map(File.build));
         }, function(error){
           reject(error);
         });
@@ -14,7 +14,7 @@ angular.module('starter.services')
     this.getNewFiles = function(lastItem){
       return $q(function(resolve, reject){
         fileAPIService.getNewFiles(lastItem).then(function(rawFiles){
-          resolve(rawFiles.map(parseRaw));
+          resolve(rawFiles.map(File.build));
         }, function(error){
           reject(error);
         });
@@ -24,7 +24,7 @@ angular.module('starter.services')
     this.getOldFiles = function(firstItem){
       return $q(function(resolve, reject){
         fileAPIService.getOldFiles(firstItem).then(function(rawFiles){
-          resolve(rawFiles.map(parseRaw));
+          resolve(rawFiles.map(File.build));
         }, function(error){
           reject(error);
         });
@@ -35,8 +35,8 @@ angular.module('starter.services')
       return $q(function(resolve, reject){
         fileAPIService.getAssignatureRoot(id).then(function(rawFiles){
           resolve({
-            folders: rawFiles.folders.map(parseRawFolder),
-            files: rawFiles.files.map(parseRaw)
+            folders: rawFiles.folders.map(Folder.build),
+            files: rawFiles.files.map(File.build)
           });
         }, function(error){
           reject(error);
@@ -48,37 +48,13 @@ angular.module('starter.services')
       return $q(function(resolve, reject){
         fileAPIService.getFolderContent(id).then(function(content){
           resolve({
-            folders: content.folders.map(parseRawFolder),
-            files: content.files.map(parseRaw)
+            folders: content.folders.map(Folder.build),
+            files: content.files.map(File.build)
           });
         }, function(error){
           reject(error);
         });
       })
     }
-
-    function parseRaw(rawFile){
-      return File.build(
-        rawFile.id,
-        rawFile.title,
-        rawFile.description,
-        rawFile.date,
-        rawFile.subject,
-        rawFile.author,
-        rawFile.path
-      );
-    };
-
-    function parseRawFolder(rawFolder){
-      return Folder.build(
-        rawFolder.id,
-        rawFolder.title,
-        rawFolder.date,
-        rawFolder.subject,
-        rawFolder.author,
-        rawFolder.path,
-        rawFolder.content
-      );
-    };
 
   }]);

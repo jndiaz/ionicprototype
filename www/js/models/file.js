@@ -1,5 +1,5 @@
-angular.module('starter.factories')
-  .factory('File', ['User', 'dateHelper', function(User, dateHelper){
+angular.module('starter.models')
+  .factory('File', ['User', 'Utils', function(User, Utils){
 
       function File(id, title, description, date, subject, author, path){
         this.id = id;
@@ -13,22 +13,33 @@ angular.module('starter.factories')
 
       File.prototype.isValid = function(){
         return true;
-      }
+      };
 
       File.prototype.dateInEnglish = function(){
         return {
-          month: dateHelper.getLongMonthNameByLanguage(this.date, 'en-us')
+          month: Utils.getLongMonthNameByLanguage(this.date, 'en-us')
         }
-      }
+      };
 
       File.create = function(){
         return new File();
-      }
+      };
 
-      File.build = function(id, title, description, date, subject, author, path){
-        return new File(id, title, description, date, subject,
-          User.buildSimplefied(author.name, author.lastname, author.profileImage), path);
-      }
+      File.build = function(rawFile){
+        return parseRaw(rawFile);
+      };
+
+      function parseRaw(rawFile){
+        return new File(
+          rawFile.id,
+          rawFile.title,
+          rawFile.description,
+          rawFile.date,
+          rawFile.subject,
+          User.buildSimplefied(rawFile.author),
+          rawFile.path
+        );
+      };
 
       return File;
 
