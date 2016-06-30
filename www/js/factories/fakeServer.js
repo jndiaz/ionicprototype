@@ -538,6 +538,32 @@ angular.module('starter.factories')
           content: 'Curabitur sed tortor quis justo luctus tempor. Nam sagittis sem lacus, a elementum leo rutrum quis. Phasellus porta tortor in pellentesque tincidunt. Phasellus at viverra diam.',
             createdAt: new Date().setMonth(new Date().getMonth() - 2)
         },
+        {
+          id: 6,
+          parentId: 1,
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            }
+          },
+          content: 'Nunc ligula purus, rhoncus ut lorem a, pretium luctus elit.',
+            createdAt: new Date().setHours(new Date().getHours() - 2)
+        },
+        {
+          id: 7,
+          parentId: 1,
+          author: {
+            name: 'Walter',
+            lastname: 'White',
+            profileImage: {
+              path: 'img/placeholder/walter.white.jpg'
+            }
+          },
+          content: 'Curabitur sed tortor quis justo luctus tempor. Nam sagittis sem lacus, a elementum leo rutrum quis. Phasellus porta tortor in pellentesque tincidunt. Phasellus at viverra diam.',
+            createdAt: new Date().setMonth(new Date().getMonth() - 2)
+        }
       ];
 
 

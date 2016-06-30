@@ -18,12 +18,14 @@ angular.module('starter.directives')
             buttons: [
               {
                 text: '<i ng-click="vm.closeComment()" class="ion-android-close icon close"></i>',
+                type: 'close-btn',
                 onTap: function(e){
                   popUp.close();
                 }
               }
             ]
           });
+          return false;
         }
 
         vm.closeComment = function(){

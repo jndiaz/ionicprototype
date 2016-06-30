@@ -11,24 +11,52 @@
   }
   .popup-body{
     padding: 0px;
-    .item{
-      border: none;
-      p{
-        text-overflow: initial;
-        white-space: normal;
+    .comments{
+      margin-bottom: 65px;
+      .item{
+        border: none;
+        p{
+          text-overflow: initial;
+          white-space: normal;
+        }
+        .since{
+          font-style: italic;
+          font-size: 13px;
+        }
       }
-      .since{
-        font-style: italic;
-        font-size: 13px;
+    }
+    .post-comment{
+      position: absolute;
+      width: 100;
+      width: 95%;
+      left: 0px;
+      bottom: 0px;
+      margin: 2.5%;
+      border-top: 1px solid #eee;
+      z-index: 20;
+      background: white;
+      input{
+        height: 50px;
+        line-height: 50px;
+        @include placeholder{
+          font-style: italic;
+        }
       }
     }
   }
   .popup-buttons{
+    min-height: 0px;
+    height: 0px;
     .button{
-      position: absolute;
-      background: none;
-      top: 10px;
-      right: 10px;
-    }    
+      &.close-btn{
+        position: absolute;
+        background: none;
+        top: 10px;
+        right: 10px;
+        &.activated{
+          border: 0px;
+        }
+      }
+    }
   }
 }

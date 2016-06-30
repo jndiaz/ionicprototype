@@ -10056,17 +10056,45 @@ ajax-content [content] {
 
 .comments-popup .popup-body {
   padding: 0px; }
-  .comments-popup .popup-body .item {
-    border: none; }
-    .comments-popup .popup-body .item p {
-      text-overflow: initial;
-      white-space: normal; }
-    .comments-popup .popup-body .item .since {
-      font-style: italic;
-      font-size: 13px; }
+  .comments-popup .popup-body .comments {
+    margin-bottom: 65px; }
+    .comments-popup .popup-body .comments .item {
+      border: none; }
+      .comments-popup .popup-body .comments .item p {
+        text-overflow: initial;
+        white-space: normal; }
+      .comments-popup .popup-body .comments .item .since {
+        font-style: italic;
+        font-size: 13px; }
+  .comments-popup .popup-body .post-comment {
+    position: absolute;
+    width: 100;
+    width: 95%;
+    left: 0px;
+    bottom: 0px;
+    margin: 2.5%;
+    border-top: 1px solid #eee;
+    z-index: 20;
+    background: white; }
+    .comments-popup .popup-body .post-comment input {
+      height: 50px;
+      line-height: 50px; }
+      .comments-popup .popup-body .post-comment input ::-webkit-input-placeholder {
+        font-style: italic; }
+      .comments-popup .popup-body .post-comment input :-moz-placeholder {
+        font-style: italic; }
+      .comments-popup .popup-body .post-comment input ::-moz-placeholder {
+        font-style: italic; }
+      .comments-popup .popup-body .post-comment input :-ms-input-placeholder {
+        font-style: italic; }
 
-.comments-popup .popup-buttons .button {
-  position: absolute;
-  background: none;
-  top: 10px;
-  right: 10px; }
+.comments-popup .popup-buttons {
+  min-height: 0px;
+  height: 0px; }
+  .comments-popup .popup-buttons .button.close-btn {
+    position: absolute;
+    background: none;
+    top: 10px;
+    right: 10px; }
+    .comments-popup .popup-buttons .button.close-btn.activated {
+      border: 0px; }

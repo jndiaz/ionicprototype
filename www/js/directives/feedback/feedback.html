@@ -30,7 +30,7 @@
         <div ng-bind-html="item.description"></div>
         <p>
           <a href="{{item.path}}" download class="subdued">Download</a>
-          <a href="#" class="subdued">5 Comments</a>
+          <comments-button parent-id="item.id"></comments-button>
         </p>
       </div>
     </div>
