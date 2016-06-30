@@ -25,7 +25,7 @@ angular.module('starter.services')
     this.getAssignatureTeachers = function(id){
       return $q(function(resolve, reject){
         assignatureAPIService.getAssignatureTeachers(id).then(function(rawTeachers){
-          resolve(rawTeachers.map(User.build));
+          resolve(rawTeachers.map(User.buildSimplefied));
         }, function(error){
           reject(error);
         });

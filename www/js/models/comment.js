@@ -1,5 +1,5 @@
 angular.module('starter.models')
-  .factory('Comment', ['User', function(User){
+  .factory('Comment', ['User', 'Utils', function(User, Utils){
 
       function Comment(id, parentId, author, content, createdAt){
         this.id = id;
@@ -11,6 +11,10 @@ angular.module('starter.models')
 
       Comment.build = function(rawComment){
         return parseRaw(rawComment);
+      };
+
+      Comment.prototype.getTimeSince = function(){
+        return Utils.getTimeSince(this.createdAt);
       }
 
       function parseRaw(rawComment){

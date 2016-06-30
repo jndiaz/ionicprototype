@@ -9932,6 +9932,12 @@ a.button {
 .card.isLoaded.ng-enter-active {
   opacity: 1; }
 
+ajax-content.comment {
+  height: 90%;
+  position: absolute;
+  left: 0px;
+  right: 0px; }
+
 loader {
   height: 100%;
   display: flex;
@@ -10058,3 +10064,9 @@ ajax-content [content] {
     .comments-popup .popup-body .item .since {
       font-style: italic;
       font-size: 13px; }
+
+.comments-popup .popup-buttons .button {
+  position: absolute;
+  background: none;
+  top: 10px;
+  right: 10px; }

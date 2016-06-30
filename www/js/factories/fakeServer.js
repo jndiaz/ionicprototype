@@ -536,7 +536,7 @@ angular.module('starter.factories')
             }
           },
           content: 'Curabitur sed tortor quis justo luctus tempor. Nam sagittis sem lacus, a elementum leo rutrum quis. Phasellus porta tortor in pellentesque tincidunt. Phasellus at viverra diam.',
-            createdAt: new Date().setHours(new Date().getMonth() - 2)
+            createdAt: new Date().setMonth(new Date().getMonth() - 2)
         },
       ];
 

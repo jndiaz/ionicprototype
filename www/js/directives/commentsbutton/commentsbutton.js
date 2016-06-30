@@ -1,20 +1,33 @@
 //Comments directive
 angular.module('starter.directives')
-  .directive('commentsButton', ['$ionicPopup', 'commentService', function($ionicPopup, commentService){
+  .directive('commentsButton', ['$ionicPopup', 'commentService',
+  function($ionicPopup, commentService){
 
-      var controller = ['$scope', function($scope){
+      var controller = ['$scope', '$timeout', function($scope, $timeout){
         var vm = this;
 
         getCommentsCounter();
 
         vm.openComments = function(){
           getComments();
-          $ionicPopup.show({
+          var popUp = $ionicPopup.show({
             templateUrl: 'js/directives/commentsbutton/commentspopup.html',
             scope: $scope,
             cssClass: 'comments-popup',
-            title: vm.commentString
+            title: vm.commentString,
+            buttons: [
+              {
+                text: '<i ng-click="vm.closeComment()" class="ion-android-close icon close"></i>',
+                onTap: function(e){
+                  popUp.close();
+                }
+              }
+            ]
           });
+        }
+
+        vm.closeComment = function(){
+          popUp.close();
         }
 
         function getCommentsCounter(){
@@ -31,8 +44,14 @@ angular.module('starter.directives')
         }
 
         function getComments(){
+          vm.loadingComments = true;
+          $scope.$broadcast('ajaxStart');
           commentService.getCommentsByParent($scope.parentId).then(function(comments){
+            $scope.$broadcast('ajaxFinish');
             $scope.comments = comments;
+            $timeout(function(){
+              vm.loadingComments = false;
+            }, 100);
           })
         }
 

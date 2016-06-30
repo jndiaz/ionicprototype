@@ -1,3 +1,12 @@
+ajax-content{
+  &.comment{
+    height: 90%;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+  }
+}
+
 loader{
   @include flexCenter();
   .spinner svg{
