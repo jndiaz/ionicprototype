@@ -104,6 +104,18 @@ angular.module('starter.config')
         }
       }
     })
+    .state('base.layout.schedule', {
+      url: '/schedule',
+      views: {
+        'content@base': {
+          templateUrl: 'templates/pages/schedule.html',
+          controller: 'ScheduleController as vm',
+          data:{
+            title: 'Schedule'
+          }
+        }
+      }
+    })
     // login state
     .state('login', {
       url: '/login',

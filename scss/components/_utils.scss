@@ -73,7 +73,7 @@
 }
 
 .has-tabs-top{
-  top: 45px;
+  top: 45px; 
 }
 
 .bar-header.has-tabs-top{
@@ -82,4 +82,8 @@
 
 .scroll-content.has-tabs-top{
   height: 84%;
+}
+
+h1, h2, h3, h4, h5 {
+  color: $font-color;
 }

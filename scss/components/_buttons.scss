@@ -1,8 +1,4 @@
-//Variables
-$button-height: 50px;
-$button-radius: 2px;
-
-.button-flat{
+@mixin button-flat($height){
   display: block;
   height: $button-height;
   text-align: center;
@@ -13,4 +9,35 @@ $button-radius: 2px;
   color: white;
   font-weight: bold;
   border-radius: $button-radius;
+}
+
+@mixin button-md-round($size){
+  position: fixed;
+  bottom: 70px;
+  right: 35px;
+  width: $size;
+  height: $size;
+  line-height: $size;
+  background-color: $color-primary;
+  font-size: 40px;
+  text-align: center;
+  -webkit-box-shadow: 0px 8px 18px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 8px 18px -5px rgba(0,0,0,0.75);
+  box-shadow: 0px 8px 18px -5px rgba(0,0,0,0.75);
+  border-radius: 50%;
+  color: white;
+}
+
+//Variables
+$button-height: 50px;
+$button-radius: 2px;
+
+.button-flat{
+  @include button-flat($button-height);
+}
+
+$button-round-size: 60px;
+
+.button-md-round{
+  @include button-md-round($button-round-size);
 }

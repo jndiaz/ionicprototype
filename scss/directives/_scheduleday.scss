@@ -1,0 +1,35 @@
+schedule-day{
+  .task{
+    color: #666;
+    h2{
+      font-size: 20px;
+    }
+    .more{
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 30px;
+    }
+    .time{
+      position: absolute;
+      top: 20px;
+      right: 40px;
+    }
+    &.now{
+      h2, h3, p{
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+.popover-task{
+  height: 115px;
+}
+
+.edittask-popup{
+  .popup{
+    background-color: white;
+    border-radius: 2px;  
+  }
+}

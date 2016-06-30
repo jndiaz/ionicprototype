@@ -1,0 +1,37 @@
+<div>
+  <div class="item item-button-right item-avatar task">
+    <img ng-src="img/placeholder/asignatures/algebra.png">
+    <h2>12:30 - 14:30</h2>
+    <h3>Algebra</h3>
+    <p>
+      Teacher is always late!
+    </p>
+    <span class="time">2 hours</span>
+    <i ng-click="vm.openOptions($event)" class="ion-android-more-vertical icon more"></i>
+  </div>
+  <div class="item item-button-right item-avatar task now">
+    <img ng-src="img/placeholder/asignatures/algorithms.png">
+    <h2>14:45 - 16:45</h2>
+    <h3>Algorithms</h3>
+    <p>
+      Practice class.
+    </p>
+    <span class="time">2 hours</span>
+    <i class="ion-android-more-vertical icon more"></i>
+  </div>
+  <div class="item item-button-right item-avatar task">
+    <img ng-src="img/placeholder/asignatures/calculus.jpg">
+    <h2>19:00 - 20:30</h2>
+    <h3>Calculus</h3>
+    <p>
+      Test next week.
+    </p>
+    <span class="time">1.5 hours</span>
+    <i class="ion-android-more-vertical icon more"></i>
+  </div>
+</div>
+<span ng-click="openEdit(true)" class="button-md-round">
+  <i class="ion-android-add icon"></i>
+</span>
+
+<ion-md-input ng-model="asd" placeholder="Name" highlight-color="energized" type="text"></ion-md-input>

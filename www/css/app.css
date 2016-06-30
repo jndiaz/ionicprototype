@@ -9815,6 +9815,60 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+ion-slide {
+  background-color: #f0f0f0; }
+
+.slider {
+  height: 100%; }
+
+.slidingTabs {
+  height: 48px;
+  z-index: 10; }
+  .slidingTabs .scroll {
+    height: auto;
+    min-width: 100%; }
+  .slidingTabs ul {
+    background-color: #c0392b;
+    height: 48px; }
+    .slidingTabs ul li {
+      height: 48px;
+      line-height: 48px;
+      text-align: center;
+      float: left;
+      margin: 0;
+      padding: 0 12px 20px 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      -webkit-transition: color 0.25s ease-in-out;
+      transition: color 0.25s ease-in-out;
+      position: relative;
+      overflow: hidden; }
+      .slidingTabs ul li.tab-active {
+        color: #fff; }
+      .slidingTabs ul li .ink {
+        display: block;
+        position: absolute;
+        background: rgba(56, 147, 245, 0.8);
+        border-radius: 100%;
+        transform: scale(0); }
+  .slidingTabs .tab-indicator-wrapper {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-transform: translateY(-2px);
+    position: absolute; }
+    .slidingTabs .tab-indicator-wrapper .tab-indicator {
+      height: 100%;
+      background-color: #fff;
+      width: 70px;
+      position: relative; }
+
+@-webkit-keyframes ripple {
+  100% {
+    opacity: 0;
+    transform: scale(2.5); } }
+
 .opacity-wrapper {
   position: absolute; }
   .opacity-wrapper .wrapper {
@@ -9858,6 +9912,9 @@ a.button {
 .scroll-content.has-tabs-top {
   height: 84%; }
 
+h1, h2, h3, h4, h5 {
+  color: #666; }
+
 .button-flat {
   display: block;
   height: 50px;
@@ -9869,6 +9926,22 @@ a.button {
   color: white;
   font-weight: bold;
   border-radius: 2px; }
+
+.button-md-round {
+  position: fixed;
+  bottom: 70px;
+  right: 35px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background-color: #c0392b;
+  font-size: 40px;
+  text-align: center;
+  -webkit-box-shadow: 0px 8px 18px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 8px 18px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 8px 18px -5px rgba(0, 0, 0, 0.75);
+  border-radius: 50%;
+  color: white; }
 
 .platform-android .bar {
   height: 56px;
@@ -9952,6 +10025,9 @@ loader {
   top: 56px;
   border-bottom: 0px; }
 
+.ionic_timepicker_popup .heading, .ionic_timepicker_popup .button_close, .ionic_timepicker_popup .button_set {
+  background-color: #c0392b; }
+
 ajax-content .loader {
   opacity: 1;
   transition: 0.2s opacity linear; }
@@ -10000,6 +10076,29 @@ ajax-content [content] {
 .empty-folder {
   font-size: 20px;
   padding: 20px; }
+
+schedule-day .task {
+  color: #666; }
+  schedule-day .task h2 {
+    font-size: 20px; }
+  schedule-day .task .more {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 30px; }
+  schedule-day .task .time {
+    position: absolute;
+    top: 20px;
+    right: 40px; }
+  schedule-day .task.now h2, schedule-day .task.now h3, schedule-day .task.now p {
+    color: #c0392b; }
+
+.popover-task {
+  height: 115px; }
+
+.edittask-popup .popup {
+  background-color: white;
+  border-radius: 2px; }
 
 .login .login-form {
   padding: 10px 50px;

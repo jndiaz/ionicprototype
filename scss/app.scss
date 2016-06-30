@@ -23,6 +23,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+@import "www/lib/slidetabs/scss/slidingTabs";
 
 //Components
 @import "components/utils";
@@ -32,10 +33,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "components/card";
 @import "components/loader";
 @import "components/tabs";
+@import "components/timepicker";
 
 //Directives
 @import "directives/ajaxcontent";
 @import "directives/fileexplorer";
+@import "directives/scheduleday";
 
 //Pages
 @import "pages/login";

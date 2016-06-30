@@ -9,7 +9,7 @@ angular.module('starter.services', []);
 angular.module('starter.models', []);
 angular.module('starter.factories', []);
 angular.module('starter.directives', []);
-angular.module('starter', ['ionic', 'starter.config', 'starter.controllers', 'starter.services',
+angular.module('starter', ['ionic', 'ionic-timepicker', 'starter.config', 'starter.controllers', 'starter.services',
 'starter.factories', 'starter.directives', 'starter.models'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
